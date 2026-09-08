@@ -302,108 +302,15 @@
 
 
 
-
+```html
 <!-- ================================
-     HERO
+     BUSINESS HERO
 ================================ -->
 
-<section class="travel-hero" id="home">
+<section class="business-hero" id="home">
 
-    <div class="hero-text">
-
-        <span class="hero-label">
-            YOUR JOURNEY STARTS HERE
-        </span>
-
-
-        <h1>
-
-            Discover places
-
-            <i>
-                worth travelling for.
-            </i>
-
-        </h1>
-
-
-        <p>
-
-            Curated travel experiences, personalized journeys
-            and seamless travel solutions designed around you.
-
-        </p>
-
-
-        <div class="hero-actions">
-
-            <a href="#services" class="hero-main-btn">
-
-                Explore Our Services
-
-                <span>↗</span>
-
-            </a>
-
-
-            <a href="#contact" class="hero-link">
-
-                Plan your trip
-
-            </a>
-
-        </div>
-
-
-        <div class="hero-trust">
-
-            <div>
-
-                <strong>
-                    01
-                </strong>
-
-                <span>
-                    Personalised<br>
-                    journeys
-                </span>
-
-            </div>
-
-
-            <div>
-
-                <strong>
-                    02
-                </strong>
-
-                <span>
-                    Travel<br>
-                    expertise
-                </span>
-
-            </div>
-
-
-            <div>
-
-                <strong>
-                    03
-                </strong>
-
-                <span>
-                    Seamless<br>
-                    assistance
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <div class="hero-image">
+    <!-- BACKGROUND VIDEO -->
+    <div class="business-hero-video">
 
         <video
             autoplay
@@ -412,35 +319,97 @@
             playsinline
             preload="auto">
 
-            <source
-                src="herovideo.mp4"
-                type="video/mp4">
-
-            Your browser does not support the video tag.
+            <source src="herovideo.mp4" type="video/mp4">
 
         </video>
 
+    </div>
 
-        <div class="image-caption">
 
-            <span>
-                FEATURED DESTINATION
+    <!-- DARK OVERLAY -->
+    <div class="business-hero-overlay"></div>
+
+
+    <!-- HERO CONTENT -->
+    <div class="business-hero-container">
+
+        <div class="business-hero-content">
+
+            <span class="business-hero-label">
+                TRAVEL • TOURISM • EXPERIENCES
             </span>
 
-            <strong>
-                Kerala, India
-            </strong>
 
-            <a href="#destinations">
-                Discover →
-            </a>
+            <h1>
+                Travel with
+                <span>purpose.</span>
+            </h1>
+
+
+            <p>
+                Personalized travel solutions for leisure,
+                medical tourism, corporate journeys and
+                pilgrimage experiences.
+            </p>
+
+
+            <div class="business-hero-actions">
+
+                <a href="#services" class="business-primary-btn">
+                    Explore Services
+                    <span>↗</span>
+                </a>
+
+                <a href="#contact" class="business-secondary-btn">
+                    Plan Your Journey
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUSINESS INFO -->
+        <div class="business-hero-bottom">
+
+            <div class="hero-info-item">
+                <strong>01</strong>
+                <span>
+                    Personalized<br>
+                    Travel Solutions
+                </span>
+            </div>
+
+
+            <div class="hero-info-item">
+                <strong>02</strong>
+                <span>
+                    Professional<br>
+                    Assistance
+                </span>
+            </div>
+
+
+            <div class="hero-info-item">
+                <strong>03</strong>
+                <span>
+                    End-to-End<br>
+                    Travel Support
+                </span>
+            </div>
+
+
+            <div class="hero-location">
+                <span>FEATURED DESTINATION</span>
+                <strong>Kerala · India</strong>
+            </div>
 
         </div>
 
     </div>
 
 </section>
-
 
 
 
@@ -458,9 +427,7 @@
                 ABOUT LOOMA JOURNEYS
             </span>
 
-            <span class="intro-number">
-                01 / 05
-            </span>
+           
 
         </div>
 
@@ -637,9 +604,7 @@
             </div>
 
 
-            <div class="destination-arrow">
-                ↗
-            </div>
+            
 
         </a>
 
@@ -673,9 +638,7 @@
             </div>
 
 
-            <div class="destination-arrow">
-                ↗
-            </div>
+            
 
         </a>
 
@@ -709,9 +672,7 @@
             </div>
 
 
-            <div class="destination-arrow">
-                ↗
-            </div>
+           
 
         </a>
 
@@ -745,9 +706,6 @@
             </div>
 
 
-            <div class="destination-arrow">
-                ↗
-            </div>
 
         </a>
 
@@ -1314,22 +1272,7 @@ document
 
     <!-- BRAND PROMISE -->
 
-    <div class="services-bottom">
-
-        <div>
-
-            <span>
-                OUR BRAND PROMISE
-            </span>
-
-            <strong>
-                Every journey we create is designed with purpose,
-                managed with care and delivered with attention to detail.
-            </strong>
-
-        </div>
-
-    </div>
+    
 
 </section>
 
@@ -1660,6 +1603,20 @@ document.addEventListener(
 </script>
 
 
+<script>
+document.querySelectorAll('.service-item').forEach(item => {
+  item.onclick = () => {
+    item.querySelector('.service-icon').click();
+  };
+});
+</script>
+
+
+
+
+
+
+
 
 
 
@@ -1836,212 +1793,119 @@ document.addEventListener(
 
 
 <!-- =====================================================
-     BRAND PROMISE / EXPERIENCES
-===================================================== -->
+     BRAND PROMISE / CUSTOMER EXPERIENCES
+     ===================================================== -->
 
-<section class="testimonials-section" id="experiences">
+     <section class="testimonials-section" id="experiences">
 
-    <div class="testimonials-head">
+       
 
-        <div>
 
-            <span class="section-label">
-                OUR APPROACH
-            </span>
+         <!-- CUSTOMER REVIEWS -->
 
+           <div class="customer-reviews">
 
-            <h2>
+               <div class="reviews-heading">
 
-                Travel with
+                     <span class="section-label">CUSTOMER EXPERIENCES</span>
 
-                <em>
-                    confidence.
-                </em>
+                           <h3>
+                                   What our customers
+                                           <em>say.</em>
+                                                 </h3>
 
-            </h2>
+                                                     </div>
 
-        </div>
 
+                                                         <div class="reviews-grid">
 
-        <p>
+                                                               <article class="review-card">
 
-            Every journey we create is designed with purpose,
-            managed with care and delivered with attention
-            to detail.
+                                                                       <div class="review-stars">
+                                                                                 ★★★★★
+                                                                                         </div>
 
-        </p>
+                                                                                                 <p>
+                                                                                                           “Everything was well organised from the beginning.
+                                                                                                                     We didn't have to worry about the small details and
+                                                                                                                               could simply enjoy our trip.”
+                                                                                                                                       </p>
 
-    </div>
+                                                                                                                                               <div class="review-author">
+                                                                                                                                                         <div class="review-avatar">A</div>
 
+                                                                                                                                                                   <div>
+                                                                                                                                                                               <strong>Anjali R.</strong>
+                                                                                                                                                                                           <span>Family Trip · Kerala</span>
+                                                                                                                                                                                                     </div>
+                                                                                                                                                                                                             </div>
 
+                                                                                                                                                                                                                   </article>
 
-    <div class="testimonial-grid">
 
+                                                                                                                                                                                                                         <article class="review-card">
 
-        <div class="testimonial-card">
+                                                                                                                                                                                                                                 <div class="review-stars">
+                                                                                                                                                                                                                                           ★★★★★
+                                                                                                                                                                                                                                                   </div>
 
-            <div class="testimonial-top">
+                                                                                                                                                                                                                                                           <p>
+                                                                                                                                                                                                                                                                     “The team was very helpful and responsive throughout
+                                                                                                                                                                                                                                                                               the journey. Communication was clear and everything
+                                                                                                                                                                                                                                                                                         was arranged exactly as discussed.”
+                                                                                                                                                                                                                                                                                                 </p>
 
-                <span>
-                    01
-                </span>
+                                                                                                                                                                                                                                                                                                         <div class="review-author">
+                                                                                                                                                                                                                                                                                                                   <div class="review-avatar">R</div>
 
-                <span>
-                    LOOMA
-                </span>
+                                                                                                                                                                                                                                                                                                                             <div>
+                                                                                                                                                                                                                                                                                                                                         <strong>Rahul M.</strong>
+                                                                                                                                                                                                                                                                                                                                                     <span>Holiday Travel · India</span>
+                                                                                                                                                                                                                                                                                                                                                               </div>
+                                                                                                                                                                                                                                                                                                                                                                       </div>
 
-            </div>
+                                                                                                                                                                                                                                                                                                                                                                             </article>
 
 
-            <p class="testimonial-text">
+                                                                                                                                                                                                                                                                                                                                                                                   <article class="review-card">
 
-                Every journey is designed with purpose,
-                keeping your requirements, preferences
-                and expectations at the centre.
+                                                                                                                                                                                                                                                                                                                                                                                           <div class="review-stars">
+                                                                                                                                                                                                                                                                                                                                                                                                     ★★★★★
+                                                                                                                                                                                                                                                                                                                                                                                                             </div>
 
-            </p>
+                                                                                                                                                                                                                                                                                                                                                                                                                     <p>
+                                                                                                                                                                                                                                                                                                                                                                                                                               “A very smooth experience. The planning was simple,
+                                                                                                                                                                                                                                                                                                                                                                                                                                         the arrangements were comfortable and the support
+                                                                                                                                                                                                                                                                                                                                                                                                                                                   made the whole journey much easier.”
+                                                                                                                                                                                                                                                                                                                                                                                                                                                           </p>
 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <div class="review-author">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <div class="review-avatar">S</div>
 
-            <div class="testimonial-person">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <strong>Sneha K.</strong>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <span>Leisure Travel · India</span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </div>
 
-                <div class="person-avatar">
-                    P
-                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </article>
 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           </div>
 
-                <div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </div>
 
-                    <strong>
-                        Purposeful
-                    </strong>
 
-                    <span>
-                        Designed around you
-                    </span>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <div class="testimonials-bottom">
 
-                </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <span>TRAVEL WITH CONFIDENCE</span>
 
-            </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <span class="testimonial-line"></span>
 
-        </div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <strong>LOOMA</strong>
 
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </div>
 
-
-        <div class="testimonial-card featured">
-
-            <div class="testimonial-top">
-
-                <span>
-                    02
-                </span>
-
-                <span>
-                    LOOMA
-                </span>
-
-            </div>
-
-
-            <p class="testimonial-text">
-
-                We carefully coordinate the details of
-                your journey so you can travel with
-                greater comfort and confidence.
-
-            </p>
-
-
-            <div class="testimonial-person">
-
-                <div class="person-avatar">
-                    C
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        Care
-                    </strong>
-
-                    <span>
-                        Managed with attention
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="testimonial-card">
-
-            <div class="testimonial-top">
-
-                <span>
-                    03
-                </span>
-
-                <span>
-                    LOOMA
-                </span>
-
-            </div>
-
-
-            <p class="testimonial-text">
-
-                From planning to on-ground assistance,
-                we focus on delivering a smooth and
-                well-organized travel experience.
-
-            </p>
-
-
-            <div class="testimonial-person">
-
-                <div class="person-avatar">
-                    D
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        Detail
-                    </strong>
-
-                    <span>
-                        Delivered thoughtfully
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="testimonials-bottom">
-
-        <span>
-            DESIGNED WITH PURPOSE
-        </span>
-
-        <span class="testimonial-line"></span>
-
-        <strong>
-            LOOMA
-        </strong>
-
-    </div>
-
-</section>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </section>
 
 
 
@@ -2624,12 +2488,12 @@ document.addEventListener(
                 ".hero-text, " +
                 ".hero-image, " +
                 ".services-intro, " +
+                ".looma-values-section, " +
                 ".destinations-head, " +
                 ".testimonials-head, " +
                 ".faq-head, " +
-                ".contact-content, " +
-                ".footer-brand, " +
-                ".footer-column"
+                ".contact-content" 
+               
 
             );
 
@@ -2664,7 +2528,7 @@ document.addEventListener(
 
                 el.style.transition =
                     "opacity 0.5s ease, " +
-                    "filter 0.6s ease, " +
+                    "filter 0.4s ease, " +
                     "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)";
 
 
@@ -2769,7 +2633,6 @@ document.addEventListener(
 );
 
 </script>
-
 
 
 
