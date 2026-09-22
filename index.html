@@ -1,2641 +1,1759 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Looma Journeys | Curating journeys, creating memories.</title>
+  <meta name="description" content="Looma Journeys is a Kerala-based travel company creating personalized journeys across Kerala, India and beyond — including holidays, pilgrimage, medical travel, private journeys and corporate travel.">
+  <meta name="keywords" content="Looma Journeys, Kerala travel, Kerala tour packages, Sabarimala pilgrimage, pilgrimage travel, medical tourism Kerala, India holidays, international holidays, customized travel, corporate travel">
 
-    <title>Looma Journeys | Travel, Medical, Pilgrimage & Corporate Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <meta name="description"
-        content="Looma Journeys offers curated domestic and international holidays, medical tourism, pilgrimage tourism, private customized journeys and corporate travel and events.">
+  <link rel="stylesheet" href="style.css">
 
-    <meta name="keywords"
-        content="Leisure and Holiday Travel, Medical Tourism, Pilgrimage Tourism, Private Customized Journeys, Corporate Travel, Corporate Events, Domestic Travel, International Travel, Travel Services, Looma Journeys, Kerala Travel">
+  <style>
+    /* =========================================================
+       LOOMA HOMEPAGE CONTENT REFRESH
+       ========================================================= */
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    :root {
+      --looma-ink: #15211d;
+      --looma-muted: #65716d;
+      --looma-paper: #f7f6f1;
+      --looma-white: #fff;
+      --looma-accent: #b88a4a;
+      --looma-accent-dark: #8f6936;
+      --looma-line: rgba(21,33,29,.12);
+      --looma-dark: #14201c;
+    }
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet">
+    * { box-sizing: border-box; }
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-        rel="stylesheet">
+    html { scroll-behavior: smooth; }
 
-    <link rel="stylesheet" href="style.css">
+    body {
+      margin: 0;
+      color: var(--looma-ink);
+      background: var(--looma-paper);
+      font-family: "DM Sans", sans-serif;
+    }
 
-    <script src="script.js"></script>
+    a { color: inherit; }
 
+    .looma-section {
+      padding: 100px 6vw;
+    }
+
+    .looma-section-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+    }
+
+    .looma-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--looma-accent-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .looma-kicker::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .looma-section-title {
+      max-width: 760px;
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(40px, 5vw, 72px);
+      line-height: .98;
+      font-weight: 600;
+      letter-spacing: -.035em;
+    }
+
+    .looma-section-title em {
+      color: var(--looma-accent);
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .looma-section-copy {
+      max-width: 650px;
+      margin: 22px 0 0;
+      color: var(--looma-muted);
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .looma-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .looma-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 54px;
+      padding: 0 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform .25s ease, background .25s ease, color .25s ease;
+    }
+
+    .looma-btn:hover { transform: translateY(-2px); }
+
+    .looma-btn-primary {
+      background: var(--looma-accent);
+      color: #fff;
+    }
+
+    .looma-btn-primary:hover { background: var(--looma-accent-dark); }
+
+    .looma-btn-outline {
+      border: 1px solid rgba(255,255,255,.42);
+      color: #fff;
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .looma-btn-dark {
+      background: var(--looma-dark);
+      color: #fff;
+    }
+
+    /* HERO */
+    .looma-hero {
+      position: relative;
+      min-height: min(820px, 92vh);
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      color: #fff;
+      background: #18231f;
+    }
+
+    .looma-hero-media,
+    .looma-hero-overlay {
+      position: absolute;
+      inset: 0;
+    }
+
+    .looma-hero-media video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .looma-hero-overlay {
+      background:
+        linear-gradient(90deg, rgba(5,13,11,.78) 0%, rgba(5,13,11,.42) 48%, rgba(5,13,11,.2) 100%),
+        linear-gradient(0deg, rgba(5,13,11,.78) 0%, transparent 55%);
+    }
+
+    .looma-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 130px 6vw 72px;
+    }
+
+    .looma-hero-brand {
+      margin-bottom: 22px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      opacity: .9;
+    }
+
+    .looma-hero h1 {
+      max-width: 930px;
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(50px, 7.4vw, 108px);
+      line-height: .92;
+      letter-spacing: -.045em;
+      font-weight: 600;
+    }
+
+    .looma-hero h1 em {
+      color: #e4bd7e;
+      font-style: italic;
+      font-weight: 500;
+    }
+
+    .looma-hero-lead {
+      max-width: 700px;
+      margin: 28px 0 0;
+      color: rgba(255,255,255,.86);
+      font-size: clamp(17px, 2vw, 21px);
+      line-height: 1.65;
+    }
+
+    .looma-hero-note {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      margin-top: 42px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.22);
+      font-size: 13px;
+      letter-spacing: .04em;
+      color: rgba(255,255,255,.78);
+    }
+
+    /* WHY BOOK / INTRO */
+    .looma-intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 70px;
+      align-items: end;
+    }
+
+    .looma-reasons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--looma-line);
+      margin-top: 60px;
+      border: 1px solid var(--looma-line);
+    }
+
+    .looma-reason {
+      min-height: 185px;
+      padding: 30px;
+      background: var(--looma-paper);
+    }
+
+    .looma-reason-number {
+      display: block;
+      margin-bottom: 28px;
+      color: var(--looma-accent);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .looma-reason h3 {
+      margin: 0 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 25px;
+    }
+
+    .looma-reason p {
+      margin: 0;
+      color: var(--looma-muted);
+      line-height: 1.65;
+    }
+
+    /* DESTINATIONS */
+    .looma-destinations {
+      background: #ecebe4;
+    }
+
+    .looma-destination-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 50px;
+    }
+
+    .looma-destination-card {
+      position: relative;
+      min-height: 430px;
+      overflow: hidden;
+      border-radius: 2px;
+      color: #fff;
+      text-decoration: none;
+      background: #333;
+    }
+
+    .looma-destination-card.large {
+      grid-row: span 2;
+      min-height: 878px;
+    }
+
+    .looma-destination-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+
+    .looma-destination-card:hover img { transform: scale(1.045); }
+
+    .looma-destination-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(4,10,8,.78), rgba(4,10,8,.05) 65%);
+    }
+
+    .looma-destination-content {
+      position: absolute;
+      z-index: 2;
+      right: 28px;
+      bottom: 28px;
+      left: 28px;
+    }
+
+    .looma-destination-content span {
+      font-size: 11px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      opacity: .8;
+    }
+
+    .looma-destination-content h3 {
+      margin: 7px 0 5px;
+      font-family: "Playfair Display", serif;
+      font-size: 40px;
+      line-height: 1;
+    }
+
+    .looma-destination-content p {
+      margin: 0;
+      color: rgba(255,255,255,.8);
+      line-height: 1.5;
+    }
+
+    .looma-destination-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 18px;
+    }
+
+    .looma-destination-list span {
+      padding: 7px 10px;
+      border: 1px solid rgba(255,255,255,.28);
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: .02em;
+      text-transform: none;
+    }
+
+    /* PACKAGES */
+    .looma-package-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 50px;
+    }
+
+    .looma-package-card {
+      overflow: hidden;
+      border: 1px solid var(--looma-line);
+      background: #fff;
+    }
+
+    .looma-package-image {
+      height: 255px;
+      overflow: hidden;
+    }
+
+    .looma-package-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .looma-package-card:hover .looma-package-image img { transform: scale(1.04); }
+
+    .looma-package-body {
+      padding: 28px;
+    }
+
+    .looma-package-tag {
+      color: var(--looma-accent-dark);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .looma-package-card h3 {
+      margin: 10px 0 8px;
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      line-height: 1.05;
+    }
+
+    .looma-package-meta {
+      color: var(--looma-muted);
+      font-size: 14px;
+    }
+
+    .looma-package-price {
+      margin: 20px 0;
+      font-size: 20px;
+      font-weight: 700;
+    }
+
+    .looma-package-price small {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--looma-muted);
+      font-size: 11px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .looma-package-includes {
+      display: grid;
+      gap: 9px;
+      margin: 0 0 24px;
+      padding: 0;
+      list-style: none;
+      color: #48544f;
+      font-size: 14px;
+    }
+
+    .looma-package-includes li::before {
+      content: "✓";
+      margin-right: 8px;
+      color: var(--looma-accent-dark);
+      font-weight: 700;
+    }
+
+    .looma-package-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--looma-ink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* PILGRIMAGE */
+    .looma-pilgrim {
+      color: #fff;
+      background:
+        linear-gradient(100deg, rgba(9,20,16,.95), rgba(9,20,16,.68)),
+        url("keralam.jpg") center/cover;
+    }
+
+    .looma-pilgrim-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .looma-pilgrim .looma-kicker { color: #d4aa6b; }
+
+    .looma-pilgrim h2 {
+      max-width: 680px;
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(44px, 5.5vw, 76px);
+      line-height: .98;
+    }
+
+    .looma-pilgrim h2 em {
+      color: #d4aa6b;
+      font-style: italic;
+    }
+
+    .looma-pilgrim-copy {
+      margin: 25px 0 0;
+      max-width: 620px;
+      color: rgba(255,255,255,.76);
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .looma-pilgrim-route {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .looma-pilgrim-place {
+      padding: 24px;
+      border: 1px solid rgba(255,255,255,.15);
+      background: rgba(255,255,255,.06);
+      backdrop-filter: blur(8px);
+    }
+
+    .looma-pilgrim-place strong {
+      display: block;
+      margin-bottom: 7px;
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+    }
+
+    .looma-pilgrim-place span {
+      color: rgba(255,255,255,.62);
+      font-size: 13px;
+    }
+
+    .looma-pilgrim-feature {
+      grid-column: 1 / -1;
+      padding: 30px;
+      border: 1px solid rgba(212,170,107,.42);
+      background: rgba(212,170,107,.09);
+    }
+
+    .looma-pilgrim-feature strong {
+      display: block;
+      margin-bottom: 8px;
+      color: #e2bc7e;
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+    }
+
+    /* TRAVEL TYPES */
+    .looma-experience-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1px;
+      margin-top: 50px;
+      border: 1px solid var(--looma-line);
+      background: var(--looma-line);
+    }
+
+    .looma-experience {
+      min-height: 205px;
+      padding: 26px;
+      background: var(--looma-paper);
+    }
+
+    .looma-experience strong {
+      display: block;
+      margin-bottom: 50px;
+      color: var(--looma-accent);
+      font-size: 12px;
+      letter-spacing: .1em;
+    }
+
+    .looma-experience h3 {
+      margin: 0 0 8px;
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+    }
+
+    .looma-experience p {
+      margin: 0;
+      color: var(--looma-muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    /* WHY LOOMA */
+    .looma-why {
+      background: #fff;
+    }
+
+    .looma-why-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0;
+      margin-top: 50px;
+      border-top: 1px solid var(--looma-line);
+      border-bottom: 1px solid var(--looma-line);
+    }
+
+    .looma-why-card {
+      min-height: 255px;
+      padding: 28px 24px;
+      border-right: 1px solid var(--looma-line);
+    }
+
+    .looma-why-card:last-child { border-right: 0; }
+
+    .looma-why-card span {
+      color: var(--looma-accent);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .looma-why-card h3 {
+      margin: 58px 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+    }
+
+    .looma-why-card p {
+      margin: 0;
+      color: var(--looma-muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* HOW IT WORKS */
+    .looma-how {
+      background: #ecebe4;
+    }
+
+    .looma-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      margin-top: 50px;
+      border-top: 1px solid var(--looma-line);
+    }
+
+    .looma-step {
+      padding: 35px 25px 10px 0;
+      margin-right: 25px;
+      border-right: 1px solid var(--looma-line);
+    }
+
+    .looma-step:last-child {
+      margin-right: 0;
+      border-right: 0;
+    }
+
+    .looma-step-number {
+      display: block;
+      color: var(--looma-accent);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .1em;
+    }
+
+    .looma-step h3 {
+      margin: 40px 0 10px;
+      font-family: "Playfair Display", serif;
+      font-size: 27px;
+    }
+
+    .looma-step p {
+      margin: 0;
+      color: var(--looma-muted);
+      line-height: 1.65;
+    }
+
+    /* MEDICAL */
+    .looma-medical {
+      background: #f4f1e9;
+    }
+
+    .looma-medical-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .looma-medical-services {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .looma-medical-item {
+      padding: 25px;
+      background: #fff;
+      border: 1px solid var(--looma-line);
+    }
+
+    .looma-medical-item strong {
+      display: block;
+      margin-bottom: 7px;
+      font-family: "Playfair Display", serif;
+      font-size: 21px;
+    }
+
+    .looma-medical-item span {
+      color: var(--looma-muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .looma-disclaimer {
+      margin-top: 25px;
+      padding: 17px 20px;
+      border-left: 3px solid var(--looma-accent);
+      color: #59635f;
+      background: rgba(255,255,255,.65);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    /* ABOUT */
+    .looma-about-grid {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .looma-founder-placeholder {
+      min-height: 420px;
+      display: grid;
+      place-items: center;
+      padding: 30px;
+      text-align: center;
+      color: var(--looma-muted);
+      background: #e8e5dc;
+      border: 1px solid var(--looma-line);
+    }
+
+    .looma-founder-placeholder strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--looma-ink);
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+    }
+
+    /* ENQUIRY */
+    .looma-enquiry {
+      color: #fff;
+      background: var(--looma-dark);
+    }
+
+    .looma-enquiry-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .looma-enquiry h2 {
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 5.5vw, 75px);
+      line-height: 1;
+    }
+
+    .looma-enquiry h2 em {
+      color: #d7ad6e;
+      font-style: italic;
+    }
+
+    .looma-enquiry-copy {
+      margin-top: 22px;
+      max-width: 520px;
+      color: rgba(255,255,255,.7);
+      line-height: 1.75;
+    }
+
+    .looma-form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .looma-form .full { grid-column: 1 / -1; }
+
+    .looma-form label {
+      display: grid;
+      gap: 7px;
+      color: rgba(255,255,255,.68);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .looma-form input,
+    .looma-form select,
+    .looma-form textarea {
+      width: 100%;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 0;
+      padding: 15px 16px;
+      outline: none;
+      color: #fff;
+      background: rgba(255,255,255,.07);
+      font: inherit;
+    }
+
+    .looma-form input:focus,
+    .looma-form select:focus,
+    .looma-form textarea:focus {
+      border-color: rgba(215,173,110,.8);
+    }
+
+    .looma-form textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    .looma-form option { color: #111; }
+
+    .looma-form-note {
+      grid-column: 1 / -1;
+      color: rgba(255,255,255,.52);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    /* CONTACT TRUST */
+    .looma-contact-strip {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--looma-line);
+      border-bottom: 1px solid var(--looma-line);
+    }
+
+    .looma-contact-item {
+      padding: 28px 24px;
+      border-right: 1px solid var(--looma-line);
+    }
+
+    .looma-contact-item:last-child { border-right: 0; }
+
+    .looma-contact-item small {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--looma-muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .looma-contact-item strong {
+      font-size: 16px;
+      word-break: break-word;
+    }
+
+    /* LEGAL */
+    .looma-legal {
+      padding-top: 45px;
+      padding-bottom: 45px;
+      background: #fff;
+    }
+
+    .looma-legal-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+    }
+
+    .looma-legal-grid a {
+      color: var(--looma-muted);
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    /* FOOTER */
+    .looma-footer {
+      padding: 70px 6vw 25px;
+      color: rgba(255,255,255,.75);
+      background: #0d1714;
+    }
+
+    .looma-footer-grid {
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+      gap: 50px;
+    }
+
+    .looma-footer-brand {
+      color: #fff;
+      font-family: "Playfair Display", serif;
+      font-size: 34px;
+    }
+
+    .looma-footer-brand span {
+      display: block;
+      color: #d7ad6e;
+      font-family: "DM Sans", sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .25em;
+    }
+
+    .looma-footer p {
+      max-width: 330px;
+      color: rgba(255,255,255,.55);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .looma-footer h4 {
+      margin: 0 0 18px;
+      color: #fff;
+      font-size: 11px;
+      letter-spacing: .16em;
+    }
+
+    .looma-footer a {
+      display: block;
+      margin: 0 0 10px;
+      color: rgba(255,255,255,.62);
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .looma-footer a:hover { color: #fff; }
+
+    .looma-footer-bottom {
+      max-width: 1240px;
+      margin: 55px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: rgba(255,255,255,.4);
+      font-size: 12px;
+    }
+
+    /* PLACEHOLDER NOTICE */
+    .looma-launch-note {
+      margin-top: 15px;
+      color: #8a5c29;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 1000px) {
+      .looma-intro-grid,
+      .looma-pilgrim-grid,
+      .looma-medical-grid,
+      .looma-about-grid,
+      .looma-enquiry-grid { grid-template-columns: 1fr; }
+
+      .looma-destination-grid { grid-template-columns: repeat(2, 1fr); }
+      .looma-destination-card.large { grid-row: auto; min-height: 500px; }
+      .looma-package-grid { grid-template-columns: 1fr 1fr; }
+      .looma-experience-grid,
+      .looma-why-grid { grid-template-columns: repeat(2, 1fr); }
+      .looma-why-card:nth-child(2) { border-right: 0; }
+      .looma-why-card:nth-child(-n+3) { border-bottom: 1px solid var(--looma-line); }
+      .looma-steps { grid-template-columns: repeat(2, 1fr); }
+      .looma-step:nth-child(2) { border-right: 0; }
+      .looma-step:nth-child(-n+2) { border-bottom: 1px solid var(--looma-line); }
+      .looma-contact-strip { grid-template-columns: repeat(2, 1fr); }
+      .looma-contact-item:nth-child(2) { border-right: 0; }
+      .looma-contact-item:nth-child(-n+2) { border-bottom: 1px solid var(--looma-line); }
+      .looma-footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 650px) {
+      .looma-section { padding: 72px 5vw; }
+      .looma-hero-content { padding: 120px 5vw 48px; }
+      .looma-reasons,
+      .looma-destination-grid,
+      .looma-package-grid,
+      .looma-experience-grid,
+      .looma-why-grid,
+      .looma-steps,
+      .looma-contact-strip,
+      .looma-footer-grid { grid-template-columns: 1fr; }
+
+      .looma-destination-card.large { min-height: 430px; }
+      .looma-destination-card { min-height: 360px; }
+      .looma-pilgrim-route,
+      .looma-medical-services,
+      .looma-form { grid-template-columns: 1fr; }
+
+      .looma-form .full { grid-column: auto; }
+      .looma-form-note { grid-column: auto; }
+
+      .looma-why-card,
+      .looma-why-card:nth-child(2) {
+        border-right: 0;
+        border-bottom: 1px solid var(--looma-line);
+      }
+
+      .looma-why-card:last-child { border-bottom: 0; }
+
+      .looma-step,
+      .looma-step:nth-child(2) {
+        margin-right: 0;
+        padding-right: 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--looma-line);
+      }
+
+      .looma-step:last-child { border-bottom: 0; }
+
+      .looma-contact-item,
+      .looma-contact-item:nth-child(2) {
+        border-right: 0;
+        border-bottom: 1px solid var(--looma-line);
+      }
+
+      .looma-contact-item:last-child { border-bottom: 0; }
+
+      .looma-footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
-
-<!-- ================================
-     PREMIUM TRAVEL HEADER
-================================ -->
-
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
 <header class="travel-header" id="travelHeader">
+  <div class="header-container">
+    <a href="#home" class="travel-logo" aria-label="Looma Journeys Home">
+      <img src="loomalogo.png" alt="Looma Journeys">
+    </a>
 
-    <div class="header-container">
-
-        <!-- LOGO -->
-
-        <a href="#home" class="travel-logo" aria-label="Looma Journeys Home">
-
-            <img src="loomalogo.png" alt="Looma Journeys">
-
-        </a>
-
-
-        <!-- DESKTOP NAVIGATION -->
-
-        <nav class="desktop-nav">
-
-            <div class="nav-item has-dropdown">
-
-                <a href="#destinations">
-
-                    Destinations
-
-                    <span class="nav-arrow">+</span>
-
-                </a>
-
-
-                <div class="mega-menu destinations-menu">
-
-                    <div class="mega-column">
-
-                        <span class="menu-label">INDIA</span>
-
-                        <a href="#">Kerala</a>
-                        <a href="#">Kashmir</a>
-                        <a href="#">Rajasthan</a>
-                        <a href="#">Goa</a>
-                        <a href="#">Himachal Pradesh</a>
-
-                    </div>
-
-
-                    <div class="mega-column">
-
-                        <span class="menu-label">INTERNATIONAL</span>
-
-                        <a href="#">Maldives</a>
-                        <a href="#">Dubai</a>
-                        <a href="#">Bali</a>
-                        <a href="#">Thailand</a>
-                        <a href="#">Europe</a>
-
-                    </div>
-
-
-                    <div class="mega-feature">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=85"
-                            alt="Luxury tropical destination">
-
-                        <div class="feature-overlay">
-
-                            <span>EXPLORE THE WORLD</span>
-
-                            <strong>
-                                Journeys worth remembering.
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <div class="nav-item has-dropdown">
+        <a href="#destinations">Destinations <span class="nav-arrow">+</span></a>
+        <div class="mega-menu destinations-menu">
+          <div class="mega-column">
+            <span class="menu-label">KERALA</span>
+            <a href="#kerala">Kerala</a>
+            <a href="#packages">Munnar</a>
+            <a href="#packages">Thekkady</a>
+            <a href="#packages">Alleppey</a>
+            <a href="#packages">Wayanad</a>
+          </div>
+          <div class="mega-column">
+            <span class="menu-label">INDIA & INTERNATIONAL</span>
+            <a href="#destinations">Kashmir</a>
+            <a href="#destinations">Rajasthan</a>
+            <a href="#destinations">Goa</a>
+            <a href="#destinations">Maldives</a>
+            <a href="#destinations">Dubai</a>
+            <a href="#destinations">Bali</a>
+          </div>
+          <div class="mega-feature">
+            <img src="keralam.jpg" alt="Kerala travel">
+            <div class="feature-overlay">
+              <span>START WITH KERALA</span>
+              <strong>God's Own Country, curated differently.</strong>
             </div>
-
-
-            <div class="nav-item">
-
-                <a href="#experiences">
-                    Experiences
-                </a>
-
-            </div>
-
-
-            <div class="nav-item">
-
-                <a href="#services">
-                    Travel Services
-                </a>
-
-            </div>
-
-
-            <div class="nav-item">
-
-                <a href="#about">
-                    About Us
-                </a>
-
-            </div>
-
-
-            <div class="nav-item">
-
-                <a href="#contact">
-                    Contact
-                </a>
-
-            </div>
-
-        </nav>
-
-
-        <!-- HEADER ACTIONS -->
-
-        <div class="header-actions">
-
-            <a href="tel:+919999999999" class="phone-link">
-
-                <span class="phone-icon">
-
-                    <svg viewBox="0 0 24 24" aria-hidden="true">
-
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2
-                        19.79 19.79 0 0 1-8.63-3.07
-                        19.5 19.5 0 0 1-6-6
-                        A19.79 19.79 0 0 1 2.12 4.18
-                        2 2 0 0 1 4.11 2h3
-                        a2 2 0 0 1 2 1.72
-                        12.84 12.84 0 0 0 .7 2.81
-                        2 2 0 0 1-.45 2.11L8.09 9.91
-                        a16 16 0 0 0 6 6l1.27-1.27
-                        a2 2 0 0 1 2.11-.45
-                        12.84 12.84 0 0 0 2.81.7
-                        A2 2 0 0 1 22 16.92z"/>
-
-                    </svg>
-
-                </span>
-
-
-                <span class="phone-text">
-
-                    <small>Talk to an expert</small>
-
-                    <strong>
-                        +91 99999 99999
-                    </strong>
-
-                </span>
-
-            </a>
-
-
-            <a href="#contact" class="plan-btn">
-
-                <span>
-                    Plan Your Trip
-                </span>
-
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-
-                    <path d="M5 12h14M13 6l6 6-6 6"/>
-
-                </svg>
-
-            </a>
-
-
-            <!-- MOBILE MENU BUTTON -->
-
-            <button
-                class="menu-toggle"
-                id="menuToggle"
-                aria-label="Open navigation menu"
-                aria-expanded="false">
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
+          </div>
         </div>
+      </div>
 
+      <div class="nav-item"><a href="#experiences">Experiences</a></div>
+      <div class="nav-item"><a href="#pilgrimage">Pilgrimage</a></div>
+      <div class="nav-item"><a href="#about">About</a></div>
+      <div class="nav-item"><a href="#contact">Contact</a></div>
+    </nav>
+
+    <div class="header-actions">
+      <a href="#contact" class="plan-btn">
+        <span>Plan Your Journey</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </div>
 
-
-    <!-- MOBILE NAVIGATION -->
-
-    <div class="mobile-menu" id="mobileMenu">
-
-        <nav>
-
-            <a href="#home">
-                Home
-            </a>
-
-
-            <div class="mobile-dropdown">
-
-                <button class="mobile-dropdown-btn">
-
-                    Destinations
-
-                    <span>+</span>
-
-                </button>
-
-
-                <div class="mobile-submenu">
-
-                    <a href="#">Kerala</a>
-                    <a href="#">Kashmir</a>
-                    <a href="#">Goa</a>
-                    <a href="#">Rajasthan</a>
-
-                    <a href="#">Maldives</a>
-                    <a href="#">Dubai</a>
-                    <a href="#">Bali</a>
-                    <a href="#">Europe</a>
-
-                </div>
-
-            </div>
-
-
-            <a href="#experiences">
-                Experiences
-            </a>
-
-            <a href="#services">
-                Travel Services
-            </a>
-
-            <a href="#about">
-                About Us
-            </a>
-
-            <a href="#contact">
-                Contact
-            </a>
-
-
-            <a href="#contact" class="mobile-plan-btn">
-
-                Plan Your Trip
-
-                <span>→</span>
-
-            </a>
-
-        </nav>
-
-    </div>
-
+  <div class="mobile-menu" id="mobileMenu">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#destinations">Destinations</a>
+      <a href="#experiences">Experiences</a>
+      <a href="#packages">Packages</a>
+      <a href="#pilgrimage">Pilgrimage</a>
+      <a href="#medical">Medical Tourism</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="#contact" class="mobile-plan-btn">Plan Your Journey <span>→</span></a>
+    </nav>
+  </div>
 </header>
 
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<section class="looma-hero" id="home">
+  <div class="looma-hero-media">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="herovideo.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="looma-hero-overlay"></div>
 
+  <div class="looma-hero-content">
+    <div class="looma-hero-brand">LOOMA JOURNEYS · KERALA · INDIA</div>
 
-```html
-<!-- ================================
-     BUSINESS HERO
-================================ -->
+    <h1>Curating journeys,<br><em>creating memories.</em></h1>
 
-<section class="business-hero" id="home">
+    <p class="looma-hero-lead">
+      Personalized travel experiences across Kerala, India and beyond.
+      From holidays and private escapes to pilgrimage, medical travel and corporate journeys,
+      Looma coordinates the details from start to finish.
+    </p>
 
-    <!-- BACKGROUND VIDEO -->
-    <div class="business-hero-video">
-
-        <video
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="auto">
-
-            <source src="herovideo.mp4" type="video/mp4">
-
-        </video>
-
+    <div class="looma-actions">
+      <a href="#contact" class="looma-btn looma-btn-primary">Plan My Journey <span>↗</span></a>
+      <a href="#contact" class="looma-btn looma-btn-outline">WhatsApp Us <span>→</span></a>
     </div>
 
-
-    <!-- DARK OVERLAY -->
-    <div class="business-hero-overlay"></div>
-
-
-    <!-- HERO CONTENT -->
-    <div class="business-hero-container">
-
-        <div class="business-hero-content">
-
-            <span class="business-hero-label">
-                TRAVEL • TOURISM • EXPERIENCES
-            </span>
-
-
-            <h1>
-                Travel with
-                <span>purpose.</span>
-            </h1>
-
-
-            <p>
-                Personalized travel solutions for leisure,
-                medical tourism, corporate journeys and
-                pilgrimage experiences.
-            </p>
-
-
-            <div class="business-hero-actions">
-
-                <a href="#services" class="business-primary-btn">
-                    Explore Services
-                    <span>↗</span>
-                </a>
-
-                <a href="#contact" class="business-secondary-btn">
-                    Plan Your Journey
-                    <span>→</span>
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- BUSINESS INFO -->
-        <div class="business-hero-bottom">
-
-            <div class="hero-info-item">
-                <strong>01</strong>
-                <span>
-                    Personalized<br>
-                    Travel Solutions
-                </span>
-            </div>
-
-
-            <div class="hero-info-item">
-                <strong>02</strong>
-                <span>
-                    Professional<br>
-                    Assistance
-                </span>
-            </div>
-
-
-            <div class="hero-info-item">
-                <strong>03</strong>
-                <span>
-                    End-to-End<br>
-                    Travel Support
-                </span>
-            </div>
-
-
-            <div class="hero-location">
-                <span>FEATURED DESTINATION</span>
-                <strong>Kerala · India</strong>
-            </div>
-
-        </div>
-
+    <div class="looma-hero-note">
+      <span>Kerala-first travel expertise</span>
+      <span>Tailor-made journeys</span>
+      <span>One point of contact</span>
+      <span>On-trip assistance</span>
     </div>
-
+  </div>
 </section>
 
+<!-- =========================================================
+     WHY BOOK
+     ========================================================= -->
+<section class="looma-section" id="why-book">
+  <div class="looma-section-inner">
+    <div class="looma-intro-grid">
+      <div>
+        <span class="looma-kicker">WHY SHOULD I BOOK THROUGH LOOMA?</span>
+        <h2 class="looma-section-title">Curated journeys.<br><em>Seamlessly managed.</em></h2>
+      </div>
 
-
-<!-- ================================
-     ABOUT / INTRO
-================================ -->
-
-<section class="intro-section" id="about">
-
-    <div class="intro-inner">
-
-        <div class="intro-top">
-
-            <span class="intro-label">
-                ABOUT LOOMA JOURNEYS
-            </span>
-
-           
-
+      <div>
+        <p class="looma-section-copy">
+          From Kerala escapes to pilgrimage journeys, international holidays and fully customized travel —
+          Looma plans your journey around your destination, dates, travellers and preferences.
+        </p>
+        <div class="looma-actions">
+          <a href="#contact" class="looma-btn looma-btn-dark">Plan My Trip <span>↗</span></a>
+          <a href="#packages" class="looma-btn looma-btn-primary">Explore Packages <span>→</span></a>
         </div>
-
-
-        <div class="intro-grid">
-
-            <div class="intro-heading">
-
-                <h2>
-
-                    Journeys
-
-                    <em>
-                        made with purpose.
-                    </em>
-
-                </h2>
-
-            </div>
-
-
-            <div class="intro-content">
-
-                <p class="intro-lead">
-
-                    We create travel experiences that are
-                    personal, seamless and thoughtfully planned.
-
-                </p>
-
-
-                <p>
-
-                    From leisure holidays and private journeys
-                    to medical tourism, pilgrimage travel and
-                    corporate events, Looma Journeys provides
-                    carefully coordinated travel solutions
-                    designed around individual requirements.
-
-                </p>
-
-
-                <a href="#services" class="intro-link">
-
-                    Discover our services
-
-                    <span>
-                        ↗
-                    </span>
-
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="intro-bottom">
-
-            <div class="intro-line"></div>
-
-
-            <div class="intro-features">
-
-                <div>
-
-                    <strong>
-                        01
-                    </strong>
-
-                    <span>
-                        Purposeful<br>
-                        planning
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        02
-                    </strong>
-
-                    <span>
-                        Personalised<br>
-                        experiences
-                    </span>
-
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        03
-                    </strong>
-
-                    <span>
-                        Seamless<br>
-                        assistance
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
+      </div>
     </div>
 
+    <div class="looma-reasons">
+      <article class="looma-reason">
+        <span class="looma-reason-number">01</span>
+        <h3>One Point of Contact</h3>
+        <p>One team coordinating the essential parts of your journey.</p>
+      </article>
+      <article class="looma-reason">
+        <span class="looma-reason-number">02</span>
+        <h3>Local Expertise</h3>
+        <p>Destination knowledge and supplier coordination with a Kerala-based perspective.</p>
+      </article>
+      <article class="looma-reason">
+        <span class="looma-reason-number">03</span>
+        <h3>Tailor-Made Travel</h3>
+        <p>Itineraries shaped around the way you actually want to travel.</p>
+      </article>
+      <article class="looma-reason">
+        <span class="looma-reason-number">04</span>
+        <h3>Transparent Planning</h3>
+        <p>Clear inclusions, exclusions and booking terms before you confirm.</p>
+      </article>
+      <article class="looma-reason">
+        <span class="looma-reason-number">05</span>
+        <h3>On-Trip Support</h3>
+        <p>Assistance when plans change or something does not go as expected.</p>
+      </article>
+      <article class="looma-reason">
+        <span class="looma-reason-number">06</span>
+        <h3>End-to-End Coordination</h3>
+        <p>Accommodation, transportation, activities and destination assistance brought together.</p>
+      </article>
+    </div>
+  </div>
 </section>
 
-
-
-
-<!-- ================================
+<!-- =========================================================
      DESTINATIONS
-================================ -->
+     ========================================================= -->
+<section class="looma-section looma-destinations" id="destinations">
+  <div class="looma-section-inner">
+    <span class="looma-kicker">EXPLORE YOUR NEXT JOURNEY</span>
+    <h2 class="looma-section-title">Go somewhere<br><em>worth remembering.</em></h2>
 
-<section class="destinations-section" id="destinations">
+    <p class="looma-section-copy">
+      Start with Kerala, explore India or plan an international escape.
+      Every destination can be turned into a tailored journey.
+    </p>
 
-    <div class="destinations-head">
-
-        <div>
-
-            <span class="section-label">
-                WHERE WILL YOU GO?
-            </span>
-
-            <h2>
-
-                Find your next
-
-                <em>
-                    escape.
-                </em>
-
-            </h2>
-
+    <div class="looma-destination-grid">
+      <a class="looma-destination-card large" id="kerala" href="#packages">
+        <img src="keralam.jpg" alt="Kerala backwaters and landscape">
+        <div class="looma-destination-content">
+          <span>KERALA · GOD'S OWN COUNTRY</span>
+          <h3>Kerala</h3>
+          <p>Curated differently.</p>
+          <div class="looma-destination-list">
+            <span>Munnar</span><span>Thekkady</span><span>Alleppey</span><span>Wayanad</span>
+            <span>Varkala</span><span>Kovalam</span><span>Kumarakom</span><span>Kochi</span>
+          </div>
         </div>
+      </a>
 
+      <a class="looma-destination-card" href="#packages">
+        <img src="https://images.unsplash.com/photo-1532664189809-02133fee698d?auto=format&fit=crop&w=1000&q=85" alt="India travel">
+        <div class="looma-destination-content">
+          <span>INDIA</span>
+          <h3>India</h3>
+          <p>Kashmir · Rajasthan · Goa · Himachal Pradesh</p>
+        </div>
+      </a>
+
+      <a class="looma-destination-card" href="#packages">
+        <img src="maldives.jpg" alt="Maldives">
+        <div class="looma-destination-content">
+          <span>INTERNATIONAL</span>
+          <h3>Maldives</h3>
+          <p>Island · Luxury · Escape</p>
+        </div>
+      </a>
+
+      <a class="looma-destination-card" href="#packages">
+        <img src="dubai.jpg" alt="Dubai">
+        <div class="looma-destination-content">
+          <span>INTERNATIONAL</span>
+          <h3>Dubai</h3>
+          <p>City · Luxury · Adventure</p>
+        </div>
+      </a>
+
+      <a class="looma-destination-card" href="#packages">
+        <img src="bali.jpg" alt="Bali">
+        <div class="looma-destination-content">
+          <span>INTERNATIONAL</span>
+          <h3>Bali</h3>
+          <p>Culture · Nature · Wellness</p>
+        </div>
+      </a>
     </div>
-
-
-    <div class="destination-grid">
-
-
-        <!-- KERALA -->
-
-        <a href="#" class="destination-card destination-large">
-
-            <img
-                src="keralam.jpg"
-                alt="Kerala">
-
-            <div class="destination-overlay"></div>
-
-
-            <div class="destination-info">
-
-                <span>
-                    INDIA
-                </span>
-
-                <h3>
-                    Kerala
-                </h3>
-
-                <p>
-                    Backwaters · Beaches · Hills
-                </p>
-
-            </div>
-
-
-            
-
-        </a>
-
-
-
-        <!-- MALDIVES -->
-
-        <a href="#" class="destination-card">
-
-            <img
-                src="maldives.jpg"
-                alt="Maldives">
-
-            <div class="destination-overlay"></div>
-
-
-            <div class="destination-info">
-
-                <span>
-                    INDIAN OCEAN
-                </span>
-
-                <h3>
-                    Maldives
-                </h3>
-
-                <p>
-                    Island · Luxury · Escape
-                </p>
-
-            </div>
-
-
-            
-
-        </a>
-
-
-
-        <!-- DUBAI -->
-
-        <a href="#" class="destination-card">
-
-            <img
-                src="dubai.jpg"
-                alt="Dubai">
-
-            <div class="destination-overlay"></div>
-
-
-            <div class="destination-info">
-
-                <span>
-                    UNITED ARAB EMIRATES
-                </span>
-
-                <h3>
-                    Dubai
-                </h3>
-
-                <p>
-                    Luxury · City · Adventure
-                </p>
-
-            </div>
-
-
-           
-
-        </a>
-
-
-
-        <!-- BALI -->
-
-        <a href="#" class="destination-card destination-wide">
-
-            <img
-                src="bali.jpg"
-                alt="Bali">
-
-            <div class="destination-overlay"></div>
-
-
-            <div class="destination-info">
-
-                <span>
-                    INDONESIA
-                </span>
-
-                <h3>
-                    Bali
-                </h3>
-
-                <p>
-                    Culture · Nature · Wellness
-                </p>
-
-            </div>
-
-
-
-        </a>
-
-    </div>
-
+  </div>
 </section>
 
+<!-- =========================================================
+     TRAVEL YOUR WAY
+     ========================================================= -->
+<section class="looma-section" id="experiences">
+  <div class="looma-section-inner">
+    <span class="looma-kicker">TRAVEL YOUR WAY</span>
+    <h2 class="looma-section-title">One company.<br><em>Different reasons to travel.</em></h2>
 
+    <div class="looma-experience-grid">
+      <article class="looma-experience">
+        <strong>01</strong>
+        <h3>Leisure & Holidays</h3>
+        <p>Family holidays, couples' escapes, private vacations and international trips.</p>
+      </article>
+      <article class="looma-experience">
+        <strong>02</strong>
+        <h3>Pilgrimage</h3>
+        <p>Planned spiritual journeys with transportation, accommodation and local coordination.</p>
+      </article>
+      <article class="looma-experience">
+        <strong>03</strong>
+        <h3>Medical Tourism</h3>
+        <p>Travel and stay coordination around medical treatment requirements.</p>
+      </article>
+      <article class="looma-experience">
+        <strong>04</strong>
+        <h3>Private Journeys</h3>
+        <p>Custom itineraries built around your interests, schedule and budget.</p>
+      </article>
+      <article class="looma-experience">
+        <strong>05</strong>
+        <h3>Corporate Travel</h3>
+        <p>Business travel, meetings and corporate event coordination.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
+<!-- =========================================================
+     FEATURED PACKAGES
+     ========================================================= -->
+<section class="looma-section" id="packages">
+  <div class="looma-section-inner">
+    <span class="looma-kicker">FEATURED JOURNEYS</span>
+    <h2 class="looma-section-title">Actual trips.<br><em>Ready to plan.</em></h2>
 
-<!-- ================================
-     DESTINATION POPUP
-================================ -->
+    <p class="looma-section-copy">
+      Use these as starting points. We can adjust duration, accommodation, transport and experiences around your requirements.
+    </p>
 
-<div class="destination-popup" id="destinationPopup">
-
-    <div class="destination-popup-box">
-
-        <button
-            class="destination-popup-close"
-            id="popupClose">
-
-            ×
-
-        </button>
-
-
-        <div class="destination-popup-image">
-
-            <img
-                id="popupImage"
-                src=""
-                alt="">
-
+    <div class="looma-package-grid">
+      <article class="looma-package-card">
+        <div class="looma-package-image">
+          <img src="keralam.jpg" alt="Kerala Munnar Thekkady Alleppey package">
         </div>
-
-
-        <div class="destination-popup-content">
-
-            <div
-                class="destination-popup-country"
-                id="popupCountry">
-
-                INDIA
-
-            </div>
-
-
-            <h2 id="popupTitle">
-                Kerala
-            </h2>
-
-
-            <p id="popupDescription">
-
-                Discover beautiful destinations filled with
-                nature, culture and unforgettable experiences.
-
-            </p>
-
-
-            <div
-                class="destination-highlights"
-                id="popupHighlights">
-
-            </div>
-
-
-            <a
-                href="#contact"
-                class="destination-popup-btn"
-                id="popupButton">
-
-                Plan Your Trip
-
-                <span>
-                    ↗
-                </span>
-
-            </a>
-
+        <div class="looma-package-body">
+          <span class="looma-package-tag">KERALA</span>
+          <h3>Munnar · Thekkady · Alleppey</h3>
+          <div class="looma-package-meta">4 Nights / 5 Days</div>
+          <div class="looma-package-price"><small>Starting from</small>₹XX,XXX / person</div>
+          <ul class="looma-package-includes">
+            <li>Accommodation</li>
+            <li>Private transfers</li>
+            <li>Breakfast</li>
+            <li>Sightseeing</li>
+            <li>Houseboat experience</li>
+            <li>Dedicated assistance</li>
+          </ul>
+          <a class="looma-package-link" href="#contact">View Package <span>→</span></a>
+          <div class="looma-launch-note">Replace the starting price with the final live package rate before launch.</div>
         </div>
+      </article>
 
+      <article class="looma-package-card">
+        <div class="looma-package-image">
+          <img src="https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=1200&q=85" alt="Sabarimala pilgrimage">
+        </div>
+        <div class="looma-package-body">
+          <span class="looma-package-tag">PILGRIMAGE</span>
+          <h3>Complete Sabarimala Journey</h3>
+          <div class="looma-package-meta">Kochi Airport → Accommodation → Pamba → Sabarimala → Return</div>
+          <div class="looma-package-price"><small>Plan around your dates</small>Request a quote</div>
+          <ul class="looma-package-includes">
+            <li>Airport pickup</li>
+            <li>Hotel accommodation</li>
+            <li>Transportation</li>
+            <li>Darshan assistance</li>
+            <li>Local coordination</li>
+            <li>Return transfer</li>
+          </ul>
+          <a class="looma-package-link" href="#contact">Plan My Sabarimala Trip <span>→</span></a>
+        </div>
+      </article>
+
+      <article class="looma-package-card">
+        <div class="looma-package-image">
+          <img src="maldives.jpg" alt="Maldives holiday">
+        </div>
+        <div class="looma-package-body">
+          <span class="looma-package-tag">INTERNATIONAL</span>
+          <h3>Maldives Escape</h3>
+          <div class="looma-package-meta">Custom duration · Resort options</div>
+          <div class="looma-package-price"><small>Starting from</small>₹XX,XXX / person</div>
+          <ul class="looma-package-includes">
+            <li>Resort accommodation</li>
+            <li>Airport / resort transfers</li>
+            <li>Meal plan options</li>
+            <li>Island experiences</li>
+            <li>Travel coordination</li>
+          </ul>
+          <a class="looma-package-link" href="#contact">Plan This Trip <span>→</span></a>
+          <div class="looma-launch-note">Replace the starting price with the final live package rate before launch.</div>
+        </div>
+      </article>
     </div>
 
-</div>
-
-
-
-
-<!-- ================================
-     DESTINATION JAVASCRIPT
-================================ -->
-
-<script>
-
-const destinationData = {
-
-    Kerala: {
-
-        country: "INDIA",
-
-        image: "keralam.jpg",
-
-        description:
-            "Experience the beauty of Kerala — from peaceful backwaters and traditional houseboats to misty hills, tropical beaches and rich local culture.",
-
-        highlights: [
-            "Backwaters",
-            "Houseboats",
-            "Munnar",
-            "Beaches",
-            "Wildlife"
-        ]
-
-    },
-
-
-    Maldives: {
-
-        country: "INDIAN OCEAN",
-
-        image: "maldives.jpg",
-
-        description:
-            "Escape to the Maldives for crystal-clear waters, white-sand beaches, luxurious resorts and unforgettable island experiences.",
-
-        highlights: [
-            "Luxury Resorts",
-            "Beaches",
-            "Snorkeling",
-            "Island Hopping",
-            "Water Sports"
-        ]
-
-    },
-
-
-    Dubai: {
-
-        country: "UNITED ARAB EMIRATES",
-
-        image: "dubai.jpg",
-
-        description:
-            "Discover Dubai — a spectacular combination of modern architecture, luxury shopping, desert adventures, beaches and vibrant city life.",
-
-        highlights: [
-            "Burj Khalifa",
-            "Desert Safari",
-            "Luxury",
-            "Shopping",
-            "Beaches"
-        ]
-
-    },
-
-
-    Bali: {
-
-        country: "INDONESIA",
-
-        image: "bali.jpg",
-
-        description:
-            "Explore Bali's beautiful temples, lush landscapes, peaceful beaches, vibrant culture and unforgettable wellness experiences.",
-
-        highlights: [
-            "Temples",
-            "Beaches",
-            "Rice Terraces",
-            "Culture",
-            "Wellness"
-        ]
-
-    }
-
-};
-
-
-const popup =
-    document.getElementById("destinationPopup");
-
-const popupClose =
-    document.getElementById("popupClose");
-
-const popupImage =
-    document.getElementById("popupImage");
-
-const popupCountry =
-    document.getElementById("popupCountry");
-
-const popupTitle =
-    document.getElementById("popupTitle");
-
-const popupDescription =
-    document.getElementById("popupDescription");
-
-const popupHighlights =
-    document.getElementById("popupHighlights");
-
-
-const destinationCards =
-    document.querySelectorAll(".destination-card");
-
-
-destinationCards.forEach(card => {
-
-    card.addEventListener("click", function(event) {
-
-        event.preventDefault();
-
-        const destination =
-            card.querySelector("h3").textContent.trim();
-
-        const data =
-            destinationData[destination];
-
-        if (!data) return;
-
-
-        popupImage.src =
-            data.image;
-
-        popupImage.alt =
-            destination + " travel destination";
-
-        popupCountry.textContent =
-            data.country;
-
-        popupTitle.textContent =
-            destination;
-
-        popupDescription.textContent =
-            data.description;
-
-
-        popupHighlights.innerHTML = "";
-
-
-        data.highlights.forEach(item => {
-
-            const span =
-                document.createElement("span");
-
-            span.textContent =
-                item;
-
-            popupHighlights.appendChild(span);
-
-        });
-
-
-        popup.classList.add("active");
-
-        document.body.style.overflow =
-            "hidden";
-
-    });
-
-});
-
-
-function closeDestinationPopup() {
-
-    popup.classList.remove("active");
-
-    document.body.style.overflow =
-        "";
-
-}
-
-
-popupClose.addEventListener(
-    "click",
-    closeDestinationPopup
-);
-
-
-popup.addEventListener(
-    "click",
-    function(event) {
-
-        if (event.target === popup) {
-
-            closeDestinationPopup();
-
-        }
-
-    }
-);
-
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Escape") {
-
-            closeDestinationPopup();
-
-        }
-
-    }
-);
-
-
-document
-    .querySelector(".destination-popup-box")
-    .addEventListener(
-        "click",
-        function(event) {
-
-            event.stopPropagation();
-
-        }
-    );
-
-</script>
-
-
-
-
-<!-- =====================================================
-     SERVICES
-===================================================== -->
-
-<section class="services-section" id="services">
-
-    <div class="services-intro">
-
-        <div>
-
-            <span class="section-label">
-                WHAT WE DO
-            </span>
-
-
-            <h2>
-
-                Travel solutions
-
-                <em>
-                    designed around you.
-                </em>
-
-            </h2>
-
-        </div>
-
-
-        <p>
-
-            From leisure holidays to medical travel,
-            pilgrimages and corporate journeys, we create
-            carefully coordinated travel experiences with
-            attention to every detail.
-
+    <div class="looma-actions">
+      <a href="#contact" class="looma-btn looma-btn-dark">Explore All Packages <span>↗</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     LOOMA PILGRIM
+     ========================================================= -->
+<section class="looma-section looma-pilgrim" id="pilgrimage">
+  <div class="looma-section-inner">
+    <div class="looma-pilgrim-grid">
+      <div>
+        <span class="looma-kicker">LOOMA PILGRIM</span>
+        <h2>Complete pilgrimage journeys.<br><em>One seamless experience.</em></h2>
+        <p class="looma-pilgrim-copy">
+          Pilgrimage travel deserves careful coordination. Looma brings together the journey,
+          accommodation, transportation and local assistance so travellers can focus on the spiritual experience.
         </p>
 
+        <div class="looma-actions">
+          <a href="#contact" class="looma-btn looma-btn-primary">Plan My Sabarimala Trip <span>↗</span></a>
+        </div>
+      </div>
+
+      <div class="looma-pilgrim-route">
+        <div class="looma-pilgrim-place"><strong>Sabarimala</strong><span>Kerala</span></div>
+        <div class="looma-pilgrim-place"><strong>Guruvayur</strong><span>Kerala</span></div>
+        <div class="looma-pilgrim-place"><strong>Padmanabhaswamy Temple</strong><span>Thiruvananthapuram</span></div>
+        <div class="looma-pilgrim-place"><strong>Tirupati</strong><span>Andhra Pradesh</span></div>
+        <div class="looma-pilgrim-place"><strong>Madurai</strong><span>Tamil Nadu</span></div>
+        <div class="looma-pilgrim-place"><strong>Rameswaram</strong><span>Tamil Nadu</span></div>
+        <div class="looma-pilgrim-place"><strong>Velankanni</strong><span>Tamil Nadu</span></div>
+
+        <div class="looma-pilgrim-feature">
+          <strong>“From your doorstep to Sannidhanam.”</strong>
+          <span>Build your Sabarimala journey around your travel dates, group size and accommodation requirements.</span>
+        </div>
+      </div>
     </div>
-
-
-
-    <!-- SERVICES LIST -->
-
-    <div class="services-list">
-
-
-        <!-- SERVICE 01 -->
-
-        <div class="service-item">
-
-            <span class="service-no">
-                01
-            </span>
-
-
-            <div class="service-main">
-
-                <h3>
-                    Leisure & Holiday Travel
-                </h3>
-
-                <p>
-                    Curated domestic and international
-                    travel experiences designed around
-                    individual preferences and requirements.
-                </p>
-
-            </div>
-
-
-            <button
-                class="service-icon"
-                type="button"
-                onclick="openService('leisure')"
-                aria-label="View Leisure and Holiday Travel details">
-
-                ↗
-
-            </button>
-
-        </div>
-
-
-
-        <!-- SERVICE 02 -->
-
-        <div class="service-item">
-
-            <span class="service-no">
-                02
-            </span>
-
-
-            <div class="service-main">
-
-                <h3>
-                    Medical Tourism
-                </h3>
-
-                <p>
-                    Coordinated travel solutions for
-                    individuals seeking medical treatment,
-                    including travel, accommodation,
-                    transportation and destination assistance.
-                </p>
-
-            </div>
-
-
-            <button
-                class="service-icon"
-                type="button"
-                onclick="openService('medical')"
-                aria-label="View Medical Tourism details">
-
-                ↗
-
-            </button>
-
-        </div>
-
-
-
-        <!-- SERVICE 03 -->
-
-        <div class="service-item">
-
-            <span class="service-no">
-                03
-            </span>
-
-
-            <div class="service-main">
-
-                <h3>
-                    Pilgrimage Tourism
-                </h3>
-
-                <p>
-                    Professionally organized pilgrimage
-                    journeys with carefully planned itineraries,
-                    transportation, accommodation and
-                    on-ground assistance.
-                </p>
-
-            </div>
-
-
-            <button
-                class="service-icon"
-                type="button"
-                onclick="openService('pilgrimage')"
-                aria-label="View Pilgrimage Tourism details">
-
-                ↗
-
-            </button>
-
-        </div>
-
-
-
-        <!-- SERVICE 04 -->
-
-        <div class="service-item">
-
-            <span class="service-no">
-                04
-            </span>
-
-
-            <div class="service-main">
-
-                <h3>
-                    Private & Customized Journeys
-                </h3>
-
-                <p>
-                    Tailor-made itineraries designed around
-                    the traveller's interests, schedule,
-                    budget and expectations.
-                </p>
-
-            </div>
-
-
-            <button
-                class="service-icon"
-                type="button"
-                onclick="openService('custom')"
-                aria-label="View Private and Customized Journeys details">
-
-                ↗
-
-            </button>
-
-        </div>
-
-
-
-        <!-- SERVICE 05 -->
-
-        <div class="service-item">
-
-            <span class="service-no">
-                05
-            </span>
-
-
-            <div class="service-main">
-
-                <h3>
-                    Corporate Travel & Events
-                </h3>
-
-                <p>
-                    End-to-end travel and event solutions
-                    for companies, institutions and
-                    organizations, including business travel,
-                    meetings and corporate events.
-                </p>
-
-            </div>
-
-
-            <button
-                class="service-icon"
-                type="button"
-                onclick="openService('corporate')"
-                aria-label="View Corporate Travel and Events details">
-
-                ↗
-
-            </button>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- BRAND PROMISE -->
-
-    
-
+  </div>
 </section>
 
+<!-- =========================================================
+     WHY LOOMA
+     ========================================================= -->
+<section class="looma-section looma-why" id="why-looma">
+  <div class="looma-section-inner">
+    <span class="looma-kicker">WHY LOOMA</span>
+    <h2 class="looma-section-title">Travel with a team<br><em>that coordinates the details.</em></h2>
 
-
-
-<!-- =====================================================
-     SERVICE POPUP
-===================================================== -->
-
-<div
-    class="service-modal"
-    id="serviceModal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modalTitle">
-
-
-    <div class="service-modal-box">
-
-
-        <button
-            class="modal-close"
-            type="button"
-            onclick="closeService()"
-            aria-label="Close">
-
-            ×
-
-        </button>
-
-
-        <span
-            class="modal-number"
-            id="modalNumber">
-
-            01
-
-        </span>
-
-
-        <span
-            class="modal-label"
-            id="modalLabel">
-
-            LOOMA JOURNEYS
-
-        </span>
-
-
-        <h2 id="modalTitle">
-
-            Leisure & Holiday Travel
-
-        </h2>
-
-
-        <p id="modalDescription">
-
-            Curated domestic and international travel
-            experiences designed around individual
-            preferences and requirements.
-
-        </p>
-
-
-        <div
-            class="modal-features"
-            id="modalFeatures">
-
-
-        </div>
-
-
-        <a
-            href="#contact"
-            class="modal-button"
-            onclick="closeService()">
-
-            Enquire about this service
-
-            <span>
-                ↗
-            </span>
-
-        </a>
-
+    <div class="looma-why-grid">
+      <article class="looma-why-card">
+        <span>01</span>
+        <h3>One Point of Contact</h3>
+        <p>One team coordinating your journey rather than a collection of disconnected bookings.</p>
+      </article>
+      <article class="looma-why-card">
+        <span>02</span>
+        <h3>Local Expertise</h3>
+        <p>Destination and supplier knowledge to help shape practical travel plans.</p>
+      </article>
+      <article class="looma-why-card">
+        <span>03</span>
+        <h3>Tailor-Made Travel</h3>
+        <p>Plans can be adapted to your interests, timing, group and budget.</p>
+      </article>
+      <article class="looma-why-card">
+        <span>04</span>
+        <h3>Transparent Planning</h3>
+        <p>Clear inclusions, exclusions and cancellation terms before confirmation.</p>
+      </article>
+      <article class="looma-why-card">
+        <span>05</span>
+        <h3>On-Trip Assistance</h3>
+        <p>Support remains available when you need help during the journey.</p>
+      </article>
     </div>
-
-</div>
-
-
-
-
-<!-- =====================================================
-     SERVICE JAVASCRIPT
-===================================================== -->
-
-<script>
-
-const serviceData = {
-
-
-    leisure: {
-
-        number: "01",
-
-        title:
-            "Leisure & Holiday Travel",
-
-        description:
-            "Curated domestic and international travel experiences designed around individual preferences and requirements. Whether you are planning a relaxing holiday, family escape or international adventure, we help create a journey suited to you.",
-
-        features: [
-
-            "Domestic Travel",
-
-            "International Travel",
-
-            "Holiday Planning",
-
-            "Personalised Experiences"
-
-        ]
-
-    },
-
-
-    medical: {
-
-        number: "02",
-
-        title:
-            "Medical Tourism",
-
-        description:
-            "Coordinated travel solutions for individuals seeking medical treatment, including travel, accommodation, transportation and destination assistance.",
-
-        features: [
-
-            "Travel Coordination",
-
-            "Accommodation Assistance",
-
-            "Transportation",
-
-            "Destination Assistance"
-
-        ]
-
-    },
-
-
-    pilgrimage: {
-
-        number: "03",
-
-        title:
-            "Pilgrimage Tourism",
-
-        description:
-            "Professionally organized pilgrimage journeys with carefully planned itineraries, transportation, accommodation and on-ground assistance.",
-
-        features: [
-
-            "Planned Itineraries",
-
-            "Transportation",
-
-            "Accommodation",
-
-            "On-Ground Assistance"
-
-        ]
-
-    },
-
-
-    custom: {
-
-        number: "04",
-
-        title:
-            "Private & Customized Journeys",
-
-        description:
-            "Tailor-made itineraries designed around the traveller's interests, schedule, budget and expectations. Every journey can be shaped around the way you want to travel.",
-
-        features: [
-
-            "Tailor-Made Itineraries",
-
-            "Personalised Planning",
-
-            "Flexible Scheduling",
-
-            "Travel Style & Budget"
-
-        ]
-
-    },
-
-
-    corporate: {
-
-        number: "05",
-
-        title:
-            "Corporate Travel & Events",
-
-        description:
-            "End-to-end travel and event solutions for companies, institutions and organizations, including business travel, meetings and corporate events.",
-
-        features: [
-
-            "Business Travel",
-
-            "Corporate Meetings",
-
-            "Corporate Events",
-
-            "End-to-End Coordination"
-
-        ]
-
-    }
-
-};
-
-
-
-function openService(service) {
-
-    const data =
-        serviceData[service];
-
-    if (!data) return;
-
-
-    document
-        .getElementById("modalNumber")
-        .textContent =
-        data.number;
-
-
-    document
-        .getElementById("modalTitle")
-        .textContent =
-        data.title;
-
-
-    document
-        .getElementById("modalDescription")
-        .textContent =
-        data.description;
-
-
-    const features =
-        document.getElementById(
-            "modalFeatures"
-        );
-
-
-    features.innerHTML =
-        data.features
-            .map(
-                feature =>
-                `<div class="modal-feature">${feature}</div>`
-            )
-            .join("");
-
-
-    document
-        .getElementById("serviceModal")
-        .classList.add("active");
-
-
-    document.body.style.overflow =
-        "hidden";
-
-}
-
-
-
-function closeService() {
-
-    document
-        .getElementById("serviceModal")
-        .classList.remove("active");
-
-
-    document.body.style.overflow =
-        "";
-
-}
-
-
-
-document
-    .getElementById("serviceModal")
-    .addEventListener(
-        "click",
-        function(event) {
-
-            if (event.target === this) {
-
-                closeService();
-
-            }
-
-        }
-    );
-
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (event.key === "Escape") {
-
-            closeService();
-
-        }
-
-    }
-);
-
-</script>
-
-
-<script>
-document.querySelectorAll('.service-item').forEach(item => {
-  item.onclick = () => {
-    item.querySelector('.service-icon').click();
-  };
-});
-</script>
-
-
-
-
-
-
-
-
-
-
-<!-- =====================================================
-     WHY CHOOSE LOOMA
-===================================================== -->
-
-<section class="looma-values-section" id="why-looma">
-
-    <div class="looma-values-head">
-
+  </div>
+</section>
+
+<!-- =========================================================
+     HOW LOOMA WORKS
+     ========================================================= -->
+<section class="looma-section looma-how" id="how-it-works">
+  <div class="looma-section-inner">
+    <span class="looma-kicker">YOUR JOURNEY. OUR RESPONSIBILITY.</span>
+    <h2 class="looma-section-title">How Looma<br><em>works.</em></h2>
+
+    <div class="looma-steps">
+      <article class="looma-step">
+        <span class="looma-step-number">01</span>
+        <h3>Tell us what you want</h3>
+        <p>Destination, dates, travellers, preferences and the kind of experience you're looking for.</p>
+      </article>
+      <article class="looma-step">
+        <span class="looma-step-number">02</span>
+        <h3>We design your journey</h3>
+        <p>Our team creates an itinerary around your requirements and discusses the details with you.</p>
+      </article>
+      <article class="looma-step">
+        <span class="looma-step-number">03</span>
+        <h3>Confirm & book</h3>
+        <p>Accommodation, transportation and activities are coordinated once you approve the plan.</p>
+      </article>
+      <article class="looma-step">
+        <span class="looma-step-number">04</span>
+        <h3>Travel with confidence</h3>
+        <p>Looma remains available for assistance throughout your journey.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     MEDICAL TOURISM
+     ========================================================= -->
+<section class="looma-section looma-medical" id="medical">
+  <div class="looma-section-inner">
+    <div class="looma-medical-grid">
+      <div>
+        <span class="looma-kicker">MEDICAL TOURISM</span>
+        <h2 class="looma-section-title">Treatment.<br><em>Travel. Accommodation. Coordination.</em></h2>
+        <p class="looma-section-copy">
+          Looma can coordinate the travel side of a medical journey — helping organize transportation,
+          accommodation and destination logistics around the traveller's treatment schedule.
+        </p>
+        <div class="looma-disclaimer">
+          Looma provides travel and coordination assistance. Medical diagnosis, treatment decisions,
+          clinical advice and treatment outcomes remain the responsibility of the treating healthcare professionals and hospital.
+        </div>
+      </div>
+
+      <div class="looma-medical-services">
+        <div class="looma-medical-item"><strong>Hospital Coordination</strong><span>Travel-side coordination around scheduled hospital visits.</span></div>
+        <div class="looma-medical-item"><strong>Airport Transfers</strong><span>Arrival and departure transportation planning.</span></div>
+        <div class="looma-medical-item"><strong>Accommodation</strong><span>Stay options for patients and accompanying attendants.</span></div>
+        <div class="looma-medical-item"><strong>Attendant Support</strong><span>Travel coordination for family members or companions.</span></div>
+        <div class="looma-medical-item"><strong>Local Transportation</strong><span>Planned movement between accommodation and required destinations.</span></div>
+        <div class="looma-medical-item"><strong>Interpreter Assistance</strong><span>Coordination support where language assistance is required and available.</span></div>
+        <div class="looma-medical-item"><strong>Post-Treatment Stay</strong><span>Accommodation and travel planning after treatment.</span></div>
+        <div class="looma-medical-item"><strong>Travel Coordination</strong><span>A single point for the non-clinical travel arrangements.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     ABOUT
+     ========================================================= -->
+<section class="looma-section" id="about">
+  <div class="looma-section-inner">
+    <div class="looma-about-grid">
+      <div class="looma-founder-placeholder">
         <div>
-
-            <span class="section-label">
-                WHY LOOMA JOURNEYS
-            </span>
-
-            <h2>
-                More than travel.
-                <em>Thoughtfully managed.</em>
-            </h2>
-
+          <strong>Founder / Managing Director</strong>
+          <span>Replace this area with the founder's professional photograph and name before launch.</span>
         </div>
+      </div>
 
-        <p>
-            Every journey is different. That's why we take the
-            time to understand your requirements and coordinate
-            the details around the way you want to travel.
+      <div>
+        <span class="looma-kicker">ABOUT LOOMA</span>
+        <h2 class="looma-section-title">Travel,<br><em>thoughtfully planned.</em></h2>
+        <p class="looma-section-copy">
+          Looma Journeys is a Kerala-based travel company focused on creating personalized journeys across Kerala,
+          India and beyond.
         </p>
-
-    </div>
-
-
-    <div class="looma-values-grid">
-
-
-        <!-- VALUE 01 -->
-
-        <div class="looma-value-card">
-
-            <span class="looma-value-number">
-                01
-            </span>
-
-            <div class="looma-value-icon">
-                ✦
-            </div>
-
-            <h3>
-                Personalized Planning
-            </h3>
-
-            <p>
-                Travel solutions shaped around your interests,
-                schedule, budget and expectations.
-            </p>
-
-            <span class="looma-value-arrow">
-                ↗
-            </span>
-
-        </div>
-
-
-        <!-- VALUE 02 -->
-
-        <div class="looma-value-card featured">
-
-            <span class="looma-value-number">
-                02
-            </span>
-
-            <div class="looma-value-icon">
-                ◇
-            </div>
-
-            <h3>
-                End-to-End Coordination
-            </h3>
-
-            <p>
-                From travel and accommodation to transportation
-                and destination assistance, we coordinate the
-                essential details of your journey.
-            </p>
-
-            <span class="looma-value-arrow">
-                ↗
-            </span>
-
-        </div>
-
-
-        <!-- VALUE 03 -->
-
-        <div class="looma-value-card">
-
-            <span class="looma-value-number">
-                03
-            </span>
-
-            <div class="looma-value-icon">
-                ○
-            </div>
-
-            <h3>
-                Professional Assistance
-            </h3>
-
-            <p>
-                Clear communication and dedicated assistance
-                throughout the planning and travel process.
-            </p>
-
-            <span class="looma-value-arrow">
-                ↗
-            </span>
-
-        </div>
-
-
-        <!-- VALUE 04 -->
-
-        <div class="looma-value-card">
-
-            <span class="looma-value-number">
-                04
-            </span>
-
-            <div class="looma-value-icon">
-                +
-            </div>
-
-            <h3>
-                Attention to Detail
-            </h3>
-
-            <p>
-                We focus on the small details that help make
-                every journey smoother, more comfortable and
-                better organized.
-            </p>
-
-            <span class="looma-value-arrow">
-                ↗
-            </span>
-
-        </div>
-
-    </div>
-
-
-    <div class="looma-values-bottom">
-
-        <span>
-            OUR COMMITMENT
-        </span>
-
-        <div class="looma-values-line"></div>
-
-        <strong>
-            PURPOSE · CARE · DETAIL
-        </strong>
-
-    </div>
-
-</section>
-
-
-
-
-
-
-
-
-<!-- =====================================================
-     BRAND PROMISE / CUSTOMER EXPERIENCES
-     ===================================================== -->
-
-     <section class="testimonials-section" id="experiences">
-
-       
-
-
-         <!-- CUSTOMER REVIEWS -->
-
-           <div class="customer-reviews">
-
-               <div class="reviews-heading">
-
-                     <span class="section-label">CUSTOMER EXPERIENCES</span>
-
-                           <h3>
-                                   What our customers
-                                           <em>say.</em>
-                                                 </h3>
-
-                                                     </div>
-
-
-                                                         <div class="reviews-grid">
-
-                                                               <article class="review-card">
-
-                                                                       <div class="review-stars">
-                                                                                 ★★★★★
-                                                                                         </div>
-
-                                                                                                 <p>
-                                                                                                           “Everything was well organised from the beginning.
-                                                                                                                     We didn't have to worry about the small details and
-                                                                                                                               could simply enjoy our trip.”
-                                                                                                                                       </p>
-
-                                                                                                                                               <div class="review-author">
-                                                                                                                                                         <div class="review-avatar">A</div>
-
-                                                                                                                                                                   <div>
-                                                                                                                                                                               <strong>Anjali R.</strong>
-                                                                                                                                                                                           <span>Family Trip · Kerala</span>
-                                                                                                                                                                                                     </div>
-                                                                                                                                                                                                             </div>
-
-                                                                                                                                                                                                                   </article>
-
-
-                                                                                                                                                                                                                         <article class="review-card">
-
-                                                                                                                                                                                                                                 <div class="review-stars">
-                                                                                                                                                                                                                                           ★★★★★
-                                                                                                                                                                                                                                                   </div>
-
-                                                                                                                                                                                                                                                           <p>
-                                                                                                                                                                                                                                                                     “The team was very helpful and responsive throughout
-                                                                                                                                                                                                                                                                               the journey. Communication was clear and everything
-                                                                                                                                                                                                                                                                                         was arranged exactly as discussed.”
-                                                                                                                                                                                                                                                                                                 </p>
-
-                                                                                                                                                                                                                                                                                                         <div class="review-author">
-                                                                                                                                                                                                                                                                                                                   <div class="review-avatar">R</div>
-
-                                                                                                                                                                                                                                                                                                                             <div>
-                                                                                                                                                                                                                                                                                                                                         <strong>Rahul M.</strong>
-                                                                                                                                                                                                                                                                                                                                                     <span>Holiday Travel · India</span>
-                                                                                                                                                                                                                                                                                                                                                               </div>
-                                                                                                                                                                                                                                                                                                                                                                       </div>
-
-                                                                                                                                                                                                                                                                                                                                                                             </article>
-
-
-                                                                                                                                                                                                                                                                                                                                                                                   <article class="review-card">
-
-                                                                                                                                                                                                                                                                                                                                                                                           <div class="review-stars">
-                                                                                                                                                                                                                                                                                                                                                                                                     ★★★★★
-                                                                                                                                                                                                                                                                                                                                                                                                             </div>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                     <p>
-                                                                                                                                                                                                                                                                                                                                                                                                                               “A very smooth experience. The planning was simple,
-                                                                                                                                                                                                                                                                                                                                                                                                                                         the arrangements were comfortable and the support
-                                                                                                                                                                                                                                                                                                                                                                                                                                                   made the whole journey much easier.”
-                                                                                                                                                                                                                                                                                                                                                                                                                                                           </p>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <div class="review-author">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                             <div class="review-avatar">S</div>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <strong>Sneha K.</strong>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <span>Leisure Travel · India</span>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         </div>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </div>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       </article>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           </div>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </div>
-
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               <div class="testimonials-bottom">
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <span>TRAVEL WITH CONFIDENCE</span>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       <span class="testimonial-line"></span>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <strong>LOOMA</strong>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </div>
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             </section>
-
-
-
-
-<!-- =====================================================
-     FAQ
-===================================================== -->
-
-<section class="faq-section" id="faq">
-
-    <div class="faq-head">
-
-        <div>
-
-            <span class="section-label">
-                GOOD TO KNOW
-            </span>
-
-
-            <h2>
-
-                Questions before
-
-                <em>
-                    you take off?
-                </em>
-
-            </h2>
-
-        </div>
-
-
-        <p>
-
-            Everything you need to know before
-            planning your next journey with us.
-
+        <p class="looma-section-copy">
+          From family holidays and private escapes to pilgrimage journeys, medical travel and corporate experiences,
+          we coordinate the essential details so travellers can focus on the experience itself.
         </p>
-
+        <div class="looma-actions">
+          <a href="#contact" class="looma-btn looma-btn-dark">Talk to Looma <span>↗</span></a>
+        </div>
+      </div>
     </div>
-
-
-
-    <div class="faq-list">
-
-
-        <!-- FAQ 01 -->
-
-        <div class="faq-item active">
-
-            <button
-                class="faq-question"
-                type="button">
-
-                <span>
-                    01 &nbsp; What types of travel services do you provide?
-                </span>
-
-                <span class="faq-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="faq-answer">
-
-                <p>
-
-                    We provide leisure and holiday travel,
-                    medical tourism, pilgrimage tourism,
-                    private and customized journeys, and
-                    corporate travel and event solutions.
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FAQ 02 -->
-
-        <div class="faq-item">
-
-            <button
-                class="faq-question"
-                type="button">
-
-                <span>
-                    02 &nbsp; Do you arrange customized trips?
-                </span>
-
-                <span class="faq-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="faq-answer">
-
-                <p>
-
-                    Yes. Our private and customized journeys
-                    are designed around your interests,
-                    schedule, budget and expectations.
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FAQ 03 -->
-
-        <div class="faq-item">
-
-            <button
-                class="faq-question"
-                type="button">
-
-                <span>
-                    03 &nbsp; Do you provide medical tourism assistance?
-                </span>
-
-                <span class="faq-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="faq-answer">
-
-                <p>
-
-                    Yes. We provide coordinated travel solutions
-                    for individuals seeking medical treatment,
-                    including travel, accommodation,
-                    transportation and destination assistance.
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FAQ 04 -->
-
-        <div class="faq-item">
-
-            <button
-                class="faq-question"
-                type="button">
-
-                <span>
-                    04 &nbsp; Do you organize pilgrimage journeys?
-                </span>
-
-                <span class="faq-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="faq-answer">
-
-                <p>
-
-                    Yes. We organize professionally planned
-                    pilgrimage journeys with itineraries,
-                    transportation, accommodation and
-                    on-ground assistance.
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FAQ 05 -->
-
-        <div class="faq-item">
-
-            <button
-                class="faq-question"
-                type="button">
-
-                <span>
-                    05 &nbsp; Do you provide corporate travel and events?
-                </span>
-
-                <span class="faq-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="faq-answer">
-
-                <p>
-
-                    Yes. We provide end-to-end travel and event
-                    solutions for companies, institutions and
-                    organizations, including business travel,
-                    meetings and corporate events.
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FAQ 06 -->
-
-        <div class="faq-item">
-
-            <button
-                class="faq-question"
-                type="button">
-
-                <span>
-                    06 &nbsp; How can I plan a journey with Looma?
-                </span>
-
-                <span class="faq-icon">
-                    +
-                </span>
-
-            </button>
-
-
-            <div class="faq-answer">
-
-                <p>
-
-                    Contact our team with your destination,
-                    travel dates and requirements. We will
-                    understand your needs and help create
-                    the right travel solution for you.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
+  </div>
 </section>
 
+<!-- =========================================================
+     ENQUIRY FORM
+     ========================================================= -->
+<section class="looma-section looma-enquiry" id="contact">
+  <div class="looma-section-inner">
+    <div class="looma-enquiry-grid">
+      <div>
+        <span class="looma-kicker">PLAN YOUR JOURNEY</span>
+        <h2>Tell us where<br>you want to <em>go.</em></h2>
+        <p class="looma-enquiry-copy">
+          Share your basic requirements and the Looma team can come back with a journey designed around you.
+        </p>
+        <div class="looma-actions">
+          <a href="#contact-details" class="looma-btn looma-btn-outline">View Contact Details <span>↓</span></a>
+        </div>
+      </div>
 
+      <form class="looma-form" id="loomaEnquiryForm">
+        <label>
+          Name
+          <input type="text" name="name" required>
+        </label>
 
+        <label>
+          WhatsApp Number
+          <input type="tel" name="whatsapp" required>
+        </label>
 
-<!-- =====================================================
-     FAQ JAVASCRIPT
-===================================================== -->
+        <label>
+          Email
+          <input type="email" name="email">
+        </label>
 
-<script>
+        <label>
+          Where are you travelling from?
+          <input type="text" name="origin">
+        </label>
 
-document
-    .querySelectorAll(".faq-question")
-    .forEach(function(button) {
+        <label>
+          Destination
+          <input type="text" name="destination" placeholder="e.g. Kerala, Sabarimala, Dubai">
+        </label>
 
-        button.addEventListener(
-            "click",
-            function() {
+        <label>
+          Travel date
+          <input type="date" name="travel_date">
+        </label>
 
-                const item =
-                    this.parentElement;
+        <label>
+          Number of travellers
+          <input type="number" name="travellers" min="1" placeholder="e.g. 4">
+        </label>
 
+        <label>
+          Trip type
+          <select name="trip_type">
+            <option value="">Select</option>
+            <option>Family</option>
+            <option>Couple</option>
+            <option>Friends</option>
+            <option>Corporate</option>
+            <option>Pilgrimage</option>
+            <option>Medical</option>
+            <option>Solo</option>
+          </select>
+        </label>
 
-                document
-                    .querySelectorAll(".faq-item")
-                    .forEach(function(other) {
+        <label>
+          Approximate budget
+          <input type="text" name="budget" placeholder="Optional">
+        </label>
 
-                        if (other !== item) {
+        <label class="full">
+          Tell us what you're looking for
+          <textarea name="message" placeholder="Preferred hotel category, transport, activities, special requirements, etc."></textarea>
+        </label>
 
-                            other.classList.remove(
-                                "active"
-                            );
-
-                        }
-
-                    });
-
-
-                item.classList.toggle(
-                    "active"
-                );
-
-            }
-        );
-
-    });
-
-</script>
-
-
-
-
-<!-- =====================================================
-     CONTACT / ENQUIRY
-===================================================== -->
-
-<section
-    class="contact-section"
-    id="contact">
-
-    <div class="contact-inner">
-
-        <div class="contact-top">
-
-            <span class="section-label">
-                START YOUR JOURNEY
-            </span>
-
+        <div class="looma-form-note">
+          This form needs to be connected to your chosen enquiry backend (Formspree, Firebase, your CRM, etc.) before launch.
         </div>
 
-
-        <div class="contact-content">
-
-            <h2>
-
-                Where will
-
-                <br>
-
-                you
-
-                <em>
-                    go next?
-                </em>
-
-            </h2>
-
-
-            <p>
-
-                Tell us where you want to go,
-                when you want to travel, and
-                what kind of experience you're
-                looking for. We'll take care of
-                the rest.
-
-            </p>
-
-
-            <a
-                href="https://wa.me/919XXXXXXXXX?text=Hi%2C%20I%20would%20like%20to%20plan%20a%20trip."
-                target="_blank"
-                class="contact-button">
-
-                Plan my journey
-
-                <span>
-                    ↗
-                </span>
-
-            </a>
-
+        <div class="looma-actions full">
+          <button type="submit" class="looma-btn looma-btn-primary">Submit Enquiry <span>↗</span></button>
         </div>
-
+      </form>
     </div>
-
+  </div>
 </section>
 
+<!-- =========================================================
+     CONTACT TRUST STRIP
+     ========================================================= -->
+<section class="looma-section" id="contact-details" style="padding-top:55px;padding-bottom:55px;background:#fff;">
+  <div class="looma-section-inner">
+    <div class="looma-contact-strip">
+      <div class="looma-contact-item">
+        <small>Business Phone</small>
+        <strong>ADD REAL BUSINESS NUMBER</strong>
+      </div>
+      <div class="looma-contact-item">
+        <small>WhatsApp</small>
+        <strong>ADD REAL WHATSAPP NUMBER</strong>
+      </div>
+      <div class="looma-contact-item">
+        <small>Email</small>
+        <strong>journeysbylooma@gmail.com</strong>
+      </div>
+      <div class="looma-contact-item">
+        <small>Location</small>
+        <strong>Kerala, India</strong>
+      </div>
+    </div>
 
+    <p class="looma-launch-note" style="margin-top:18px;">
+      Phone, WhatsApp, Instagram, Facebook and Google Business Profile links are intentionally not fabricated.
+      Replace the two contact placeholders and social links with the verified business details before publishing.
+    </p>
+  </div>
+</section>
 
+<!-- =========================================================
+     LEGAL / TRUST
+     ========================================================= -->
+<section class="looma-section looma-legal">
+  <div class="looma-section-inner">
+    <span class="looma-kicker">TRUST & INFORMATION</span>
+    <h2 class="looma-section-title" style="font-size:clamp(32px,4vw,52px);">Clear information before<br><em>you book.</em></h2>
 
-<!-- =====================================================
+    <p class="looma-section-copy">
+      Add these pages before commercial launch so customers can understand how Looma handles bookings,
+      payments, cancellations, privacy and travel-related responsibilities.
+    </p>
+
+    <div class="looma-legal-grid" style="margin-top:30px;">
+      <a href="/about.html">About Us</a>
+      <a href="/contact.html">Contact Us</a>
+      <a href="/faq.html">FAQs</a>
+      <a href="/terms.html">Terms & Conditions</a>
+      <a href="/privacy-policy.html">Privacy Policy</a>
+      <a href="/cancellation-refund-policy.html">Cancellation & Refund Policy</a>
+      <a href="/payment-policy.html">Payment Policy</a>
+      <a href="/travel-disclaimer.html">Travel Disclaimer</a>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
      FOOTER
-===================================================== -->
-
-<footer class="travel-footer">
-
-
-    <div class="footer-main">
-
-
-        <!-- BRAND -->
-
-        <div class="footer-brand">
-
-            <a
-                href="#home"
-                class="footer-logo">
-
-                LOOMA
-
-                <span>
-                    JOURNEYS
-                </span>
-
-            </a>
-
-
-            <p>
-
-                Purposefully designed journeys,
-                carefully managed experiences.
-
-            </p>
-
-
-            <a
-                href="#contact"
-                class="footer-enquire">
-
-                Plan your journey
-
-                <span>
-                    ↗
-                </span>
-
-            </a>
-
-        </div>
-
-
-
-        <!-- EXPLORE -->
-
-        <div class="footer-column">
-
-            <span class="footer-title">
-                EXPLORE
-            </span>
-
-
-            <a href="#home">
-                Home
-            </a>
-
-            <a href="#destinations">
-                Destinations
-            </a>
-
-            <a href="#services">
-                Travel Services
-            </a>
-
-            <a href="#experiences">
-                Our Approach
-            </a>
-
-        </div>
-
-
-
-        <!-- SERVICES -->
-
-        <div class="footer-column">
-
-            <span class="footer-title">
-                SERVICES
-            </span>
-
-
-            <a href="#services">
-                Leisure & Holidays
-            </a>
-
-            <a href="#services">
-                Medical Tourism
-            </a>
-
-            <a href="#services">
-                Pilgrimage Tourism
-            </a>
-
-            <a href="#services">
-                Corporate Travel
-            </a>
-
-        </div>
-
-
-
-        <!-- CONTACT -->
-
-        <div class="footer-column">
-
-            <span class="footer-title">
-                GET IN TOUCH
-            </span>
-
-
-            <a href="tel:+919XXXXXXXXX">
-                +91 9XXXXXXXXX
-            </a>
-
-
-            <a href="mailto:journeysbylooma@gmail.com">
-                journeysbylooma@gmail.com
-            </a>
-
-
-            <span class="footer-location">
-                Kerala, India
-            </span>
-
-        </div>
-
+     ========================================================= -->
+<footer class="looma-footer">
+  <div class="looma-footer-grid">
+    <div>
+      <div class="looma-footer-brand">LOOMA<span>JOURNEYS</span></div>
+      <p>Curating journeys, creating memories. Personalized travel experiences across Kerala, India and beyond.</p>
+      <a href="#contact" class="looma-btn looma-btn-primary" style="display:inline-flex;margin-top:12px;">Plan Your Journey <span>↗</span></a>
     </div>
 
-
-
-    <!-- FOOTER BOTTOM -->
-
-    <div class="footer-bottom">
-
-        <span>
-
-            © 2026 LOOMA JOURNEYS.
-            ALL RIGHTS RESERVED.
-
-        </span>
-
-
-        <div class="footer-socials">
-
-            <a
-                href="#"
-                aria-label="Instagram">
-
-                Instagram
-
-            </a>
-
-
-            <a
-                href="#"
-                aria-label="Facebook">
-
-                Facebook
-
-            </a>
-
-        </div>
-
+    <div>
+      <h4>EXPLORE</h4>
+      <a href="#destinations">Kerala</a>
+      <a href="#destinations">India</a>
+      <a href="#destinations">International</a>
+      <a href="#packages">Packages</a>
     </div>
 
+    <div>
+      <h4>EXPERIENCES</h4>
+      <a href="#experiences">Holidays</a>
+      <a href="#pilgrimage">Pilgrimage</a>
+      <a href="#medical">Medical Tourism</a>
+      <a href="#experiences">Corporate Travel</a>
+      <a href="#experiences">Customized Travel</a>
+    </div>
+
+    <div>
+      <h4>CONTACT</h4>
+      <a href="#contact-details">Business Phone — Add verified number</a>
+      <a href="mailto:journeysbylooma@gmail.com">journeysbylooma@gmail.com</a>
+      <a href="#contact">WhatsApp — Add verified number</a>
+      <span style="display:block;margin-top:16px;color:rgba(255,255,255,.45);font-size:13px;">Kerala, India</span>
+    </div>
+  </div>
+
+  <div class="looma-footer-bottom">
+    <span>© 2026 LOOMA JOURNEYS. ALL RIGHTS RESERVED.</span>
+    <span>
+      <a href="#" aria-label="Instagram" style="display:inline;margin-right:18px;">Instagram — add verified link</a>
+      <a href="#" aria-label="Facebook" style="display:inline;margin-right:18px;">Facebook — add verified link</a>
+      <a href="#" aria-label="Google Business Profile" style="display:inline;">Google Business — add verified link</a>
+    </span>
+  </div>
 </footer>
 
-
-
-
-<!-- =====================================================
-     SCROLL REVEAL ANIMATION
-===================================================== -->
-
 <script>
+  /* Mobile navigation */
+  const menuToggle = document.getElementById("menuToggle");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!isOpen));
+      mobileMenu.classList.toggle("active", !isOpen);
+      document.body.style.overflow = !isOpen ? "hidden" : "";
+    });
 
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        menuToggle.setAttribute("aria-expanded", "false");
+        mobileMenu.classList.remove("active");
+        document.body.style.overflow = "";
+      });
+    });
+  }
 
-        const elements =
-            document.querySelectorAll(
+  /* Enquiry form: prevent a dead submit until a backend is connected. */
+  const enquiryForm = document.getElementById("loomaEnquiryForm");
 
-                "section, .destination-card, " +
-                ".service-item, " +
-                ".testimonial-card, " +
-                ".faq-item, " +
-                ".intro-content, " +
-                ".hero-text, " +
-                ".hero-image, " +
-                ".services-intro, " +
-                ".looma-values-section, " +
-                ".destinations-head, " +
-                ".testimonials-head, " +
-                ".faq-head, " +
-                ".contact-content" 
-               
-
-            );
-
-
-        elements.forEach(
-            (el) => {
-
-
-                if (
-                    el.closest(
-                        ".destination-popup"
-                    ) ||
-                    el.closest(
-                        ".service-modal"
-                    )
-                ) {
-
-                    return;
-
-                }
-
-
-                el.style.opacity =
-                    "0";
-
-                el.style.filter =
-                    "blur(8px)";
-
-                el.style.transform =
-                    "translateY(35px)";
-
-
-                el.style.transition =
-                    "opacity 0.5s ease, " +
-                    "filter 0.4s ease, " +
-                    "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1)";
-
-
-                el.dataset.scrollReveal =
-                    "true";
-
-            }
-        );
-
-
-
-        const observer =
-            new IntersectionObserver(
-
-                (entries, observer) => {
-
-
-                    entries.forEach(
-                        entry => {
-
-
-                            if (
-                                !entry.isIntersecting
-                            ) {
-
-                                return;
-
-                            }
-
-
-                            const el =
-                                entry.target;
-
-
-                            const delay =
-                                Math.min(
-                                    [
-                                        ...elements
-                                    ].indexOf(el) * 30,
-                                    250
-                                );
-
-
-                            setTimeout(
-                                () => {
-
-
-                                    el.style.opacity =
-                                        "1";
-
-                                    el.style.filter =
-                                        "blur(0)";
-
-                                    el.style.transform =
-                                        "translateY(0)";
-
-
-                                },
-                                delay
-                            );
-
-
-                            observer.unobserve(
-                                el
-                            );
-
-                        }
-                    );
-
-                },
-
-                {
-
-                    threshold: 0.12,
-
-                    rootMargin:
-                        "0px 0px -60px 0px"
-
-                }
-
-            );
-
-
-
-        elements.forEach(
-            el => {
-
-
-                if (
-                    el.dataset.scrollReveal ===
-                    "true"
-                ) {
-
-                    observer.observe(el);
-
-                }
-
-            }
-        );
-
-    }
-);
-
+  if (enquiryForm) {
+    enquiryForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      alert("Thank you. Your enquiry form is ready, but it must be connected to Looma's enquiry backend before submissions can be received.");
+    });
+  }
 </script>
 
-
-
 </body>
-
 </html>
