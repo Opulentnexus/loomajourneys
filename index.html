@@ -11,7 +11,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
-
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
   <link rel="stylesheet" href="style.css">
 
   <style>
@@ -1411,7 +1414,7 @@ a {
 <header class="travel-header" id="travelHeader">
   <div class="header-container">
     <a href="#home" class="travel-logo" aria-label="Looma Journeys Home">
-      <img src="loomalogo.png" alt="Looma Journeys">
+      <img src="logooflooma.png" alt="Looma Journeys">
     </a>
 
     <nav class="desktop-nav" aria-label="Primary navigation">
@@ -1482,11 +1485,21 @@ a {
      HERO
      ========================================================= -->
 <section class="looma-hero" id="home">
-  <div class="looma-hero-media">
-    <video autoplay muted loop playsinline preload="auto">
-      <source src="heromunnar.mp4" type="video/mp4">
-    </video>
-  </div>
+ <div class="looma-hero-media">
+  <picture>
+    <!-- Mobile image -->
+    <source
+      media="(max-width: 768px)"
+      srcset="munnnarmobile.jpg"
+    >
+
+    <!-- Laptop / Desktop image -->
+    <img
+      src="munnardesktop.jpg"
+      alt="Munnar, Kerala"
+    >
+  </picture>
+</div>
   <div class="looma-hero-overlay"></div>
 
   <div class="looma-hero-content">
@@ -1495,9 +1508,7 @@ a {
     <h1>Curating journeys,<br><em>creating memories.</em></h1>
 
     <p class="looma-hero-lead">
-      Personalized travel experiences across Kerala, India and beyond.
-      From holidays and private escapes to pilgrimage, medical travel and corporate journeys,
-      Looma coordinates the details from start to finish.
+     Discover travel shaped around you. From private escapes and immersive holidays to pilgrimages, medical travel, and corporate journeys, Looma brings together every detail to create seamless experiences, wherever your journey takes you.
     </p>
 
     <div class="looma-actions">
@@ -1506,10 +1517,11 @@ a {
     </div>
 
     <div class="looma-hero-note">
-      <span>Kerala-first travel expertise</span>
+      
       <span>Tailor-made journeys</span>
       <span>One point of contact</span>
       <span>On-trip assistance</span>
+      <span>Forex exchange</span>
     </div>
   </div>
 </section>
@@ -1538,35 +1550,31 @@ a {
     </div>
 
     <div class="looma-reasons">
+     
       <article class="looma-reason">
         <span class="looma-reason-number">01</span>
-        <h3>One Point of Contact</h3>
-        <p>One team coordinating the essential parts of your journey.</p>
+        <h3>Local Insight</h3>
+        <p>Kerala-based expertise with a wider world of destinations.</p>
       </article>
       <article class="looma-reason">
         <span class="looma-reason-number">02</span>
-        <h3>Local Expertise</h3>
-        <p>Destination knowledge and supplier coordination with a Kerala-based perspective.</p>
+        <h3>Bespoke Planning</h3>
+        <p>Journeys shaped around your dates, interests, group and budget.</p>
       </article>
       <article class="looma-reason">
         <span class="looma-reason-number">03</span>
-        <h3>Tailor-Made Travel</h3>
-        <p>Itineraries shaped around the way you actually want to travel.</p>
+        <h3>Seamless Coordination</h3>
+        <p>Accommodation, transportation, experiences and essential arrangements brought together.</p>
       </article>
       <article class="looma-reason">
         <span class="looma-reason-number">04</span>
-        <h3>Transparent Planning</h3>
-        <p>Clear inclusions, exclusions and booking terms before you confirm.</p>
+        <h3>Personal Assistance</h3>
+        <p>A dedicated point of contact before and throughout your journey.</p>
       </article>
       <article class="looma-reason">
         <span class="looma-reason-number">05</span>
-        <h3>On-Trip Support</h3>
-        <p>Assistance when plans change or something does not go as expected.</p>
-      </article>
-      <article class="looma-reason">
-        <span class="looma-reason-number">06</span>
-        <h3>End-to-End Coordination</h3>
-        <p>Accommodation, transportation, activities and destination assistance brought together.</p>
+        <h3>Transparent Planning</h3>
+        <p>Clear pricing, inclusions and booking terms before you confirm.</p>
       </article>
     </div>
   </div>
@@ -1644,7 +1652,7 @@ a {
 <section class="looma-section" id="experiences">
   <div class="looma-section-inner">
     <span class="looma-kicker">TRAVEL YOUR WAY</span>
-    <h2 class="looma-section-title">One company.<br><em>Different reasons to travel.</em></h2>
+    <h2 class="looma-section-title">Different journeys.<br><em>One trusted partner.</em></h2>
 
     <div class="looma-experience-grid">
       <article class="looma-experience">
@@ -1685,7 +1693,9 @@ a {
     <h2 class="looma-section-title">Actual trips.<br><em>Ready to plan.</em></h2>
 
     <p class="looma-section-copy">
-      Use these as starting points. We can adjust duration, accommodation, transport and experiences around your requirements.
+      Journey beyond the ordinary.
+Discover experiences that stay with you.   instead of Go somewhere
+worth remembering.
     </p>
 
     <div class="looma-package-grid">
@@ -1697,7 +1707,7 @@ a {
           <span class="looma-package-tag">KERALA</span>
           <h3>Munnar · Thekkady · Alleppey</h3>
           <div class="looma-package-meta">4 Nights / 5 Days</div>
-          <div class="looma-package-price"><small>Starting from</small>₹XX,XXX / person</div>
+          
           <ul class="looma-package-includes">
             <li>Accommodation</li>
             <li>Private transfers</li>
@@ -1706,7 +1716,11 @@ a {
             <li>Houseboat experience</li>
             <li>Dedicated assistance</li>
           </ul>
-          <a class="looma-package-link" href="#contact">View Package <span>→</span></a>
+          <a class="looma-package-link"
+   href="https://wa.me/918330000696?text=Hi%20Looma%2C%20I%27m%20interested%20in%20the%20Munnar%20%C2%B7%20Thekkady%20%C2%B7%20Alleppey%20package%20%284%20Nights%20%2F%205%20Days%29."
+   target="_blank">
+  View Package <span>→</span>
+</a>
           
         </div>
       </article>
@@ -1719,7 +1733,7 @@ a {
           <span class="looma-package-tag">PILGRIMAGE</span>
           <h3>Complete Sabarimala Journey</h3>
           <div class="looma-package-meta">Kochi Airport → Accommodation → Pamba → Sabarimala → Return</div>
-          <div class="looma-package-price"><small>Plan around your dates</small>Request a quote</div>
+          
           <ul class="looma-package-includes">
             <li>Airport pickup</li>
             <li>Hotel accommodation</li>
@@ -1740,7 +1754,7 @@ a {
           <span class="looma-package-tag">INTERNATIONAL</span>
           <h3>Maldives Escape</h3>
           <div class="looma-package-meta">Custom duration · Resort options</div>
-          <div class="looma-package-price"><small>Starting from</small>₹XX,XXX / person</div>
+         
           <ul class="looma-package-includes">
             <li>Resort accommodation</li>
             <li>Airport / resort transfers</li>
@@ -1748,7 +1762,11 @@ a {
             <li>Island experiences</li>
             <li>Travel coordination</li>
           </ul>
-          <a class="looma-package-link" href="#contact">Plan This Trip <span>→</span></a>
+          <a class="looma-package-link"
+   href="https://wa.me/919876543210?text=Hi%20Looma%2C%20I%27m%20interested%20in%20the%20Maldives%20%C2%B7%20Escape%29."
+   target="_blank">
+  View Package <span>→</span>
+</a>
           
         </div>
       </article>
@@ -1786,7 +1804,8 @@ a {
         <div class="looma-pilgrim-place"><strong>Tirupati</strong><span>Andhra Pradesh</span></div>
         <div class="looma-pilgrim-place"><strong>Madurai</strong><span>Tamil Nadu</span></div>
         <div class="looma-pilgrim-place"><strong>Rameswaram</strong><span>Tamil Nadu</span></div>
-        <div class="looma-pilgrim-place"><strong>Velankanni</strong><span>Tamil Nadu</span></div>
+        <div class="looma-pilgrim-place"><strong>International Pilgrim</strong><span>Jerusalem</span></div>
+
 
         <div class="looma-pilgrim-feature">
           <strong>“From your doorstep to Sannidhanam.”</strong>
@@ -1831,6 +1850,11 @@ a {
         <h3>On-Trip Assistance</h3>
         <p>Support remains available when you need help during the journey.</p>
       </article>
+       <article class="looma-why-card">
+        <span>06</span>
+        <h3>Forex Services</h3>
+        <p>Convenient foreign exchange support to help you prepare for your international journey with ease.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -1846,12 +1870,12 @@ a {
     <div class="looma-steps">
       <article class="looma-step">
         <span class="looma-step-number">01</span>
-        <h3>Tell us what you want</h3>
+        <h3>Tell us your plans</h3>
         <p>Destination, dates, travellers, preferences and the kind of experience you're looking for.</p>
       </article>
       <article class="looma-step">
         <span class="looma-step-number">02</span>
-        <h3>We design your journey</h3>
+        <h3>We curate your journey</h3>
         <p>Our team creates an itinerary around your requirements and discusses the details with you.</p>
       </article>
       <article class="looma-step">
@@ -1916,14 +1940,12 @@ a {
 
       <div>
         <span class="looma-kicker">ABOUT LOOMA</span>
-        <h2 class="looma-section-title">Travel,<br><em>thoughtfully planned.</em></h2>
+        <h2 class="looma-section-title">Born from a shared passion<br><em>for travel.</em></h2>
         <p class="looma-section-copy">
-          Looma Journeys is a Kerala-based travel company focused on creating personalized journeys across Kerala,
-          India and beyond.
+          Looma Journeys was created by two partners with a shared vision — to make travel more personal, seamless and meaningful. What began with a love for discovering places and bringing people together has grown into a journey of its own, connecting travellers with experiences across Kerala, India and beyond.
         </p>
         <p class="looma-section-copy">
-          From family holidays and private escapes to pilgrimage journeys, medical travel and corporate experiences,
-          we coordinate the essential details so travellers can focus on the experience itself.
+          We plan with purpose, travel with heart, and create journeys worth remembering.
         </p>
         <div class="looma-actions">
           <a href="#contact" class="looma-btn looma-btn-dark">Talk to Looma <span>↗</span></a>
@@ -1939,18 +1961,26 @@ a {
 <section class="looma-section looma-enquiry" id="contact">
   <div class="looma-section-inner">
     <div class="looma-enquiry-grid">
+
       <div>
         <span class="looma-kicker">PLAN YOUR JOURNEY</span>
+
         <h2>Tell us where<br>you want to <em>go.</em></h2>
+
         <p class="looma-enquiry-copy">
           Share your basic requirements and the Looma team can come back with a journey designed around you.
         </p>
+
         <div class="looma-actions">
-          <a href="#contact-details" class="looma-btn looma-btn-outline">View Contact Details <span>↓</span></a>
+          <a href="#contact-details" class="looma-btn looma-btn-outline">
+            View Contact Details <span>↓</span>
+          </a>
         </div>
       </div>
 
+      <!-- ENQUIRY FORM -->
       <form class="looma-form" id="loomaEnquiryForm">
+
         <label>
           Name
           <input type="text" name="name" required>
@@ -1967,13 +1997,12 @@ a {
         </label>
 
         <label>
-          Where are you travelling from?
-          <input type="text" name="origin">
-        </label>
-
-        <label>
           Destination
-          <input type="text" name="destination" placeholder="e.g. Kerala, Sabarimala, Dubai">
+          <input
+            type="text"
+            name="destination"
+            placeholder="e.g. Kerala, Sabarimala, Dubai"
+          >
         </label>
 
         <label>
@@ -1983,42 +2012,103 @@ a {
 
         <label>
           Number of travellers
-          <input type="number" name="travellers" min="1" placeholder="e.g. 4">
-        </label>
-
-        <label>
-          Trip type
-          <select name="trip_type">
-            <option value="">Select</option>
-            <option>Family</option>
-            <option>Couple</option>
-            <option>Friends</option>
-            <option>Corporate</option>
-            <option>Pilgrimage</option>
-            <option>Medical</option>
-            <option>Solo</option>
-          </select>
-        </label>
-
-        <label>
-          Approximate budget
-          <input type="text" name="budget" placeholder="Optional">
+          <input
+            type="number"
+            name="travellers"
+            min="1"
+            placeholder="e.g. 4"
+          >
         </label>
 
         <label class="full">
           Tell us what you're looking for
-          <textarea name="message" placeholder="Preferred hotel category, transport, activities, special requirements, etc."></textarea>
+          <textarea
+            name="message"
+            placeholder="Preferred hotel category, transport, activities, special requirements, etc."
+          ></textarea>
         </label>
 
-        
-
         <div class="looma-actions full">
-          <button type="submit" class="looma-btn looma-btn-primary">Submit Enquiry <span>↗</span></button>
+          <button
+            type="submit"
+            class="looma-btn looma-btn-primary"
+          >
+            Submit Enquiry <span>↗</span>
+          </button>
         </div>
+
       </form>
+
     </div>
   </div>
 </section>
+
+
+<!-- =========================================================
+     WHATSAPP REDIRECT
+     ========================================================= -->
+<script>
+document.getElementById("loomaEnquiryForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const form = this;
+
+  const name = form.name.value.trim();
+  const whatsapp = form.whatsapp.value.trim();
+  const email = form.email.value.trim();
+  const destination = form.destination.value.trim();
+  const travelDate = form.travel_date.value;
+  const travellers = form.travellers.value;
+  const message = form.message.value.trim();
+
+  // CHANGE THIS TO LOOMA'S WHATSAPP NUMBER
+  const loomaWhatsApp = "919876543210";
+
+  // Format travel date
+  let formattedDate = "";
+
+  if (travelDate) {
+    const date = new Date(travelDate);
+
+    formattedDate = date.toLocaleDateString("en-IN", {
+      day: "2-digit",
+      month: "long",
+      year: "numeric"
+    });
+  }
+
+  // Create WhatsApp message
+  const whatsappMessage =
+`Hello Looma! 👋
+
+I would like to plan a journey.
+
+*Name:* ${name}
+*WhatsApp Number:* ${whatsapp}
+
+*Email:* ${email || "Not provided"}
+
+*Destination:* ${destination || "Not specified"}
+
+*Travel Date:* ${formattedDate || "Not specified"}
+
+*Number of Travellers:* ${travellers || "Not specified"}
+
+*Requirements:*
+${message || "No additional requirements provided."}
+
+Please share the available options and details. Thank you!`;
+
+  // Encode message for WhatsApp
+  const encodedMessage = encodeURIComponent(whatsappMessage);
+
+  // Open WhatsApp
+  const whatsappURL =
+    `https://wa.me/${loomaWhatsApp}?text=${encodedMessage}`;
+
+  window.open(whatsappURL, "_blank");
+});
+</script>
 
 <!-- =========================================================
      CONTACT TRUST STRIP
@@ -2028,12 +2118,9 @@ a {
     <div class="looma-contact-strip">
       <div class="looma-contact-item">
         <small>Business Phone</small>
-        <strong>BUSINESS NUMBER</strong>
+        <strong>+91 9876543210</strong>
       </div>
-      <div class="looma-contact-item">
-        <small>WhatsApp</small>
-        <strong> WHATSAPP NUMBER</strong>
-      </div>
+      
       <div class="looma-contact-item">
         <small>Email</small>
         <strong>journeysbylooma@gmail.com</strong>
@@ -2048,28 +2135,7 @@ a {
   </div>
 </section>
 
-<!-- =========================================================
-     LEGAL / TRUST
-     ========================================================= -->
-<section class="looma-section looma-legal">
-  <div class="looma-section-inner">
-    <span class="looma-kicker">TRUST & INFORMATION</span>
-    <h2 class="looma-section-title" style="font-size:clamp(32px,4vw,52px);">Clear information before<br><em>you book.</em></h2>
 
-    
-
-    <div class="looma-legal-grid" style="margin-top:30px;">
-      <a href="/about.html">About Us</a>
-      <a href="/contact.html">Contact Us</a>
-      <a href="/faq.html">FAQs</a>
-      <a href="/terms.html">Terms & Conditions</a>
-      <a href="/privacy-policy.html">Privacy Policy</a>
-      <a href="/cancellation-refund-policy.html">Cancellation & Refund Policy</a>
-      <a href="/payment-policy.html">Payment Policy</a>
-      <a href="/travel-disclaimer.html">Travel Disclaimer</a>
-    </div>
-  </div>
-</section>
 
 <!-- =========================================================
      FOOTER
@@ -2155,7 +2221,17 @@ a {
 
 
 
-
+<!-- FLOATING WHATSAPP -->
+<!-- FLOATING WHATSAPP -->
+<a
+  href="https://wa.me/919XXXXXXXXX"
+  class="looma-whatsapp-float"
+  target="_blank"
+  rel="noopener"
+  aria-label="Chat with Looma on WhatsApp"
+>
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
 
 
 
