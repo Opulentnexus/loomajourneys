@@ -40,11 +40,12 @@ img{display:block;max-width:100%}
 /* ========================= HEADER ============================== */
 /* =========================================================
    LOOMA HEADER — FROSTED WHITE GLASS
-   FINAL OVERRIDE
+   LIGHT MODE + SOLID WHITE DARK MODE
    ========================================================= */
 
 html body .travel-header {
   position: fixed !important;
+
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
@@ -53,23 +54,26 @@ html body .travel-header {
 
   height: var(--header) !important;
 
-  /* TRANSPARENT WHITE */
+  /* =======================================================
+     LIGHT MODE
+     ======================================================= */
+
   background-color: rgba(255, 255, 255, 0.62) !important;
   background-image: none !important;
 
-  /* GLASS */
+  /* Glass blur */
   -webkit-backdrop-filter: blur(5px) saturate(140%) !important;
   backdrop-filter: blur(5px) saturate(140%) !important;
 
-  /* BORDER */
+  /* Border */
   border: none !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.7) !important;
 
-  /* SHADOW */
+  /* Shadow */
   box-shadow:
     0 4px 30px rgba(0, 0, 0, 0.06) !important;
 
-  color: #111 !important;
+  color: #111111 !important;
 
   isolation: isolate;
 }
@@ -81,6 +85,7 @@ html body .travel-header {
 
 html body .travel-header .header-container {
   width: min(calc(100% - 48px), var(--container)) !important;
+
   height: 100% !important;
 
   margin: auto !important;
@@ -89,6 +94,8 @@ html body .travel-header .header-container {
   align-items: center !important;
 
   gap: 30px !important;
+
+  background: transparent !important;
 }
 
 
@@ -99,42 +106,51 @@ html body .travel-header .header-container {
 html body .travel-header a,
 html body .travel-header span,
 html body .travel-header button {
-  color: #111 !important;
+  color: #111111 !important;
 }
 
 
 /* =========================================================
-   FORCE DARK MODE TO STAY FROSTED WHITE
+   DARK DEVICE MODE
+   SOLID WHITE HEADER
    ========================================================= */
 
 @media (prefers-color-scheme: dark) {
 
   html body .travel-header {
 
-    background-color:
-      rgba(255, 255, 255, 0.62) !important;
+    /* SOLID WHITE */
+    background-color: #ffffff !important;
 
     background-image: none !important;
 
-    -webkit-backdrop-filter:
-      blur(25px) saturate(140%) !important;
+    /* NO TRANSPARENCY / NO GLASS BLUR */
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
 
-    backdrop-filter:
-      blur(25px) saturate(140%) !important;
-
+    /* Border */
     border-bottom:
-      1px solid rgba(255, 255, 255, 0.7) !important;
+      1px solid rgba(20, 35, 30, 0.10) !important;
 
+    /* Shadow */
     box-shadow:
-      0 4px 30px rgba(0, 0, 0, 0.06) !important;
+      0 2px 12px rgba(20, 35, 30, 0.06) !important;
 
-    color: #111 !important;
+    color: #111111 !important;
   }
 
+
+  /* Header container */
+  html body .travel-header .header-container {
+    background: transparent !important;
+  }
+
+
+  /* Header text */
   html body .travel-header a,
   html body .travel-header span,
   html body .travel-header button {
-    color: #111 !important;
+    color: #111111 !important;
   }
 
 }
