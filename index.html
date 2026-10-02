@@ -1673,151 +1673,205 @@ a {
 </section>
 
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+(function () {
 
-  const popup = document.getElementById("internationalPopup");
-  const openBtn = document.getElementById("loomaExploreInternational");
-  const closeBtn = document.getElementById("loomaInternationalClose");
+  function initLoomaInternationalPopup() {
 
-  /* =========================================================
-     OPEN POPUP
-     ========================================================= */
+    const popup = document.getElementById("internationalPopup");
 
-  if (openBtn && popup) {
-
-    openBtn.addEventListener("click", function (e) {
-
-      e.preventDefault();
-      e.stopPropagation();
-
-      popup.classList.add("active");
-
-      document.body.style.overflow = "hidden";
-
-    });
-
-  }
-
-
-  /* =========================================================
-     CLOSE POPUP
-     ========================================================= */
-
-  function closePopup(e) {
-
-    if (e) {
-      e.preventDefault();
-      e.stopPropagation();
+    if (!popup) {
+      console.warn("Looma: internationalPopup not found");
+      return;
     }
 
-    popup.classList.remove("active");
 
-    document.body.style.overflow = "";
+    /* =====================================================
+       OPEN BUTTON
+       ===================================================== */
 
-  }
+    const openButton =
+      document.getElementById("loomaExploreInternational");
+
+    if (openButton) {
+
+      openButton.addEventListener("click", function (e) {
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        popup.classList.add("active");
+
+        popup.style.display = "flex";
+        popup.style.visibility = "visible";
+        popup.style.opacity = "1";
+        popup.style.pointerEvents = "auto";
+
+        document.body.style.overflow = "hidden";
+
+      });
+
+    }
 
 
-  /* =========================================================
-     CLOSE BUTTON
-     ========================================================= */
+    /* =====================================================
+       CLOSE BUTTON
+       Finds your EXISTING close button automatically
+       ===================================================== */
 
-  if (closeBtn && popup) {
+    const closeButton =
+      popup.querySelector(".looma-popup-close");
 
-    closeBtn.addEventListener("click", function (e) {
+    if (closeButton) {
 
-      closePopup(e);
+      closeButton.addEventListener("click", function (e) {
 
-    });
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        e.stopPropagation();
 
-  }
+        /* Remove active class */
+        popup.classList.remove("active");
+
+        /* Force close */
+        popup.style.display = "none";
+        popup.style.visibility = "hidden";
+        popup.style.opacity = "0";
+        popup.style.pointerEvents = "none";
+
+        /* Restore scrolling */
+        document.body.style.overflow = "";
+
+      }, true);
+
+    } else {
+
+      console.warn("Looma: .looma-popup-close not found");
+
+    }
 
 
-  /* =========================================================
-     CLICK DARK BACKGROUND TO CLOSE
-     ========================================================= */
-
-  if (popup) {
+    /* =====================================================
+       CLICK OUTSIDE
+       ===================================================== */
 
     popup.addEventListener("click", function (e) {
 
       if (e.target === popup) {
 
-        closePopup(e);
+        e.preventDefault();
+        e.stopPropagation();
+
+        popup.classList.remove("active");
+
+        popup.style.display = "none";
+        popup.style.visibility = "hidden";
+        popup.style.opacity = "0";
+        popup.style.pointerEvents = "none";
+
+        document.body.style.overflow = "";
 
       }
+
+    });
+
+
+    /* =====================================================
+       ESC KEY
+       ===================================================== */
+
+    document.addEventListener("keydown", function (e) {
+
+      if (
+        e.key === "Escape" &&
+        popup.classList.contains("active")
+      ) {
+
+        popup.classList.remove("active");
+
+        popup.style.display = "none";
+        popup.style.visibility = "hidden";
+        popup.style.opacity = "0";
+        popup.style.pointerEvents = "none";
+
+        document.body.style.overflow = "";
+
+      }
+
+    });
+
+
+    /* =====================================================
+       WHATSAPP
+       ===================================================== */
+
+    popup.querySelectorAll(".looma-whatsapp-btn").forEach(function (button) {
+
+      button.addEventListener("click", function (e) {
+
+        e.preventDefault();
+        e.stopPropagation();
+
+        const place = this.getAttribute("data-place");
+
+        if (place) {
+          sendInternationalWhatsApp(place);
+        }
+
+      });
 
     });
 
   }
 
 
+  /* =======================================================
+     INITIALIZE
+     ======================================================= */
+
+  if (document.readyState === "loading") {
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      initLoomaInternationalPopup
+    );
+
+  } else {
+
+    initLoomaInternationalPopup();
+
+  }
+
+
   /* =========================================================
-     ESC TO CLOSE
+     GLOBAL WHATSAPP FUNCTION
      ========================================================= */
 
-  document.addEventListener("keydown", function (e) {
+  window.sendInternationalWhatsApp = function (place) {
 
-    if (e.key === "Escape") {
+    const phoneNumber = "918330000696";
 
-      if (popup.classList.contains("active")) {
+    const message =
+      "Hi Looma Journeys! 👋\n\n" +
+      "I'm interested in planning a trip to " +
+      place +
+      ".\n\n" +
+      "Please share the available packages, itinerary and pricing.";
 
-        closePopup(e);
+    const whatsappURL =
+      "https://wa.me/" +
+      phoneNumber +
+      "?text=" +
+      encodeURIComponent(message);
 
-      }
+    window.open(
+      whatsappURL,
+      "_blank",
+      "noopener,noreferrer"
+    );
 
-    }
+  };
 
-  });
-
-
-  /* =========================================================
-     WHATSAPP BUTTONS
-     ========================================================= */
-
-  document.querySelectorAll(".looma-whatsapp-btn").forEach(function (button) {
-
-    button.addEventListener("click", function (e) {
-
-      e.preventDefault();
-      e.stopPropagation();
-
-      const place = button.getAttribute("data-place");
-
-      if (!place) return;
-
-      sendInternationalWhatsApp(place);
-
-    });
-
-  });
-
-});
-
-
-/* =========================================================
-   WHATSAPP
-   ========================================================= */
-
-function sendInternationalWhatsApp(place) {
-
-  const phoneNumber = "918330000696";
-
-  const message =
-    "Hi Looma Journeys! 👋\n\n" +
-    "I'm interested in planning a trip to " +
-    place +
-    ".\n\n" +
-    "Please share the available packages, itinerary and pricing.";
-
-  const whatsappURL =
-    "https://wa.me/" +
-    phoneNumber +
-    "?text=" +
-    encodeURIComponent(message);
-
-  window.open(whatsappURL, "_blank");
-
-}
+})();
 </script>
 
 
