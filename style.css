@@ -2635,18 +2635,27 @@ img{display:block;max-width:100%}
 
 
 
-
-
 .travel-logo {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  width: 70px;
+  height: 70px;
+
+  flex-shrink: 0;
 }
 
 .travel-logo img {
   width: 70px;
   height: 70px;
   object-fit: contain;
+  display: block;
+}
+
+/* Light logo */
+.logo-light {
+  display: block;
 }
 
 /* Dark logo hidden normally */
@@ -2654,8 +2663,13 @@ img{display:block;max-width:100%}
   display: none !important;
 }
 
-/* Dark mode */
+
+/* =========================
+   DARK MODE
+   ========================= */
+
 @media (prefers-color-scheme: dark) {
+
   .logo-light {
     display: none !important;
   }
@@ -2666,12 +2680,32 @@ img{display:block;max-width:100%}
 }
 
 
+/* =========================
+   DESKTOP — LEFT
+   ========================= */
+
+@media (min-width: 901px) {
+  .travel-logo {
+    margin-right: auto;
+  }
+}
 
 
+/* =========================
+   MOBILE — CENTER
+   ========================= */
 
+@media (max-width: 900px) {
 
+  .header-container {
+    position: relative;
+  }
 
-
-
-
-
+  .travel-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+  }
+}
