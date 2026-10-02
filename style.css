@@ -3353,3 +3353,55 @@ img{display:block;max-width:100%}
     background: #111111 !important;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================================
+   LOOMA POPUP CLOSE OVERRIDE
+   ========================================================= */
+
+#internationalPopup {
+  z-index: 999999 !important;
+}
+
+#internationalPopup .looma-popup-close {
+  position: absolute !important;
+
+  z-index: 9999999 !important;
+
+  pointer-events: auto !important;
+
+  cursor: pointer !important;
+}
