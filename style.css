@@ -45,24 +45,14 @@ img{display:block;max-width:100%}
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-
-  z-index: 1000;
+  width: 100%;
   height: var(--header);
+  z-index: 1000;
 
-  background: transparent !important;
-
-  border: none !important;
-  box-shadow: none !important;
-
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
+  background: transparent;
+  border: none;
+  box-shadow: none;
 }
-
-
-/* =========================================
-   HEADER CONTAINER
-   ========================================= */
 
 .header-container {
   width: min(calc(100% - 48px), var(--container));
@@ -75,8 +65,39 @@ img{display:block;max-width:100%}
   position: relative;
 }
 
-.travel-logo{display:flex;align-items:center;flex:0 0 auto}
-.travel-logo img{width:auto;height:43px;object-fit:contain}
+.travel-logo {
+  display: flex;
+  align-items: center;
+}
+
+.travel-logo img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+
+/* LAPTOP */
+@media (min-width: 901px) {
+  .travel-logo {
+    margin-right: auto;
+  }
+}
+
+
+/* MOBILE */
+@media (max-width: 900px) {
+
+  .travel-logo {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+}
 .desktop-nav{display:flex;align-items:center;justify-content:center;gap:4px;flex:1;height:100%}
 .nav-item{position:relative;height:100%;display:flex;align-items:center}
 .nav-item>a{display:flex;align-items:center;gap:7px;padding:9px 12px;border-radius:8px;color:#39433f;font-size:14px;font-weight:600;letter-spacing:.01em;transition:.2s var(--ease)}
