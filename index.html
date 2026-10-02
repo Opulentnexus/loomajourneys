@@ -1487,20 +1487,32 @@ a {
      HERO
      ========================================================= -->
 <section class="looma-hero" id="home">
- <div class="looma-hero-media">
-  <picture>
-    <!-- Mobile image -->
-    <source
-      media="(max-width: 768px)"
-      srcset="homemobile.jpg"
-    >
+<div class="looma-hero-media">
 
-    <!-- Laptop / Desktop image -->
-    <img
-      src="homelap.jpg"
-      alt="Munnar, Kerala"
-    >
-  </picture>
+  <video
+    class="looma-hero-video desktop-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    poster="homelap.jpg"
+  >
+    <source src="homelap.mp4" type="video/mp4">
+  </video>
+
+  <video
+    class="looma-hero-video mobile-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    poster="homemobile.jpg"
+  >
+    <source src="homemobile.mp4" type="video/mp4">
+  </video>
+
 </div>
   <div class="looma-hero-overlay"></div>
 
