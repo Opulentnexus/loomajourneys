@@ -37,38 +37,8 @@ button,input,textarea,select{font:inherit}
 button{cursor:pointer}
 img{display:block;max-width:100%}
 
-/* ========================= HEADER ============================== */
-.travel-header {
-  position: fixed;
-  inset: 0 0 auto;
-  z-index: 1000;
-
-  height: var(--header);
-
-  /* ALWAYS WHITE */
-  background: rgba(255, 255, 255, 0.97) !important;
-
-  /* ALWAYS SAME BORDER */
-  border-bottom: 1px solid rgba(20, 35, 30, 0.10) !important;
-
-  /* ALWAYS SAME SHADOW */
-  box-shadow: 0 2px 12px rgba(20, 35, 30, 0.04) !important;
-
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  color: #111111 !important;
-}
-
-.header-container {
-  width: min(calc(100% - 48px), var(--container));
-  height: 100%;
-  margin: auto;
-
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
+.travel-header{position:fixed;inset:0 0 auto;z-index:1000;height:var(--header);background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);box-shadow:0 2px 12px rgba(20,35,30,.04);backdrop-filter:blur(14px)}
+.header-container{width:min(calc(100% - 48px),var(--container));height:100%;margin:auto;display:flex;align-items:center;gap:30px}
 .travel-logo{display:flex;align-items:center;flex:0 0 auto}
 .travel-logo img{width:auto;height:43px;object-fit:contain}
 .desktop-nav{display:flex;align-items:center;justify-content:center;gap:4px;flex:1;height:100%}
