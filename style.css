@@ -2691,3 +2691,383 @@ img{display:block;max-width:100%}
 
 
 
+
+
+/* =========================================================
+   MORE DESTINATIONS BUTTON
+   ========================================================= */
+
+.looma-more-destinations {
+  display: flex;
+  justify-content: center;
+  margin-top: 42px;
+}
+
+.looma-explore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 15px 24px;
+
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 999px;
+
+  background: transparent;
+  color: #111;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+
+  cursor: pointer;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.looma-explore-btn span {
+  font-size: 18px;
+  line-height: 1;
+
+  transition: transform 0.3s ease;
+}
+
+.looma-explore-btn:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+  transform: translateY(-2px);
+}
+
+.looma-explore-btn:hover span {
+  transform: translate(3px, -3px);
+}
+
+
+/* =========================================================
+   INTERNATIONAL POPUP OVERLAY
+   ========================================================= */
+
+.looma-international-overlay {
+  position: fixed;
+  inset: 0;
+
+  z-index: 99999;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 24px;
+
+  background: rgba(8, 8, 8, 0.68);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.35s ease,
+    visibility 0.35s ease;
+}
+
+.looma-international-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* =========================================================
+   POPUP BOX
+   ========================================================= */
+
+.looma-international-popup {
+  position: relative;
+
+  width: min(760px, 100%);
+  max-height: min(820px, 90vh);
+
+  overflow-y: auto;
+
+  padding: 42px;
+
+  background: #fff;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.25);
+
+  transform: translateY(30px) scale(0.97);
+
+  transition: transform 0.4s cubic-bezier(.22,1,.36,1);
+}
+
+.looma-international-overlay.active
+.looma-international-popup {
+  transform: translateY(0) scale(1);
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+   ========================================================= */
+
+.looma-popup-close {
+  position: absolute;
+
+  top: 20px;
+  right: 20px;
+
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 50%;
+
+  background: #f7f7f7;
+
+  color: #111;
+
+  font-size: 25px;
+  font-weight: 300;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.looma-popup-close:hover {
+  background: #111;
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   POPUP HEADER
+   ========================================================= */
+
+.looma-popup-header {
+  padding-right: 55px;
+  margin-bottom: 28px;
+}
+
+.looma-popup-header .looma-kicker {
+  display: block;
+
+  margin-bottom: 9px;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+
+  color: #888;
+}
+
+.looma-popup-header h2 {
+  margin: 0 0 10px;
+
+  font-size: clamp(30px, 5vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+
+  color: #111;
+}
+
+.looma-popup-header p {
+  max-width: 520px;
+
+  margin: 0;
+
+  color: #777;
+
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   DESTINATION LIST
+   ========================================================= */
+
+.looma-international-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 10px;
+}
+
+.looma-international-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  padding: 17px 18px;
+
+  border: 1px solid #e9e9e9;
+  border-radius: 16px;
+
+  background: #fafafa;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.looma-international-item:hover {
+  background: #fff;
+  border-color: #ccc;
+
+  transform: translateY(-2px);
+}
+
+.looma-international-item > div {
+  min-width: 0;
+}
+
+.looma-international-item > div > span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #aaa;
+
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.looma-international-item h3 {
+  margin: 0;
+
+  color: #151515;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   WHATSAPP BUTTON
+   ========================================================= */
+
+.looma-international-item button {
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 9px 13px;
+
+  border: 0;
+  border-radius: 999px;
+
+  background: #111;
+  color: #fff;
+
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.looma-international-item button span {
+  font-size: 14px;
+}
+
+.looma-international-item button:hover {
+  background: #25D366;
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+  .looma-more-destinations {
+    margin-top: 28px;
+  }
+
+  .looma-explore-btn {
+    width: 100%;
+    justify-content: center;
+
+    padding: 15px 18px;
+
+    font-size: 12px;
+  }
+
+  .looma-international-overlay {
+    padding: 12px;
+  }
+
+  .looma-international-popup {
+    max-height: 92vh;
+
+    padding: 30px 18px 20px;
+
+    border-radius: 22px;
+  }
+
+  .looma-popup-close {
+    top: 14px;
+    right: 14px;
+
+    width: 38px;
+    height: 38px;
+  }
+
+  .looma-popup-header {
+    padding-right: 45px;
+    margin-bottom: 22px;
+  }
+
+  .looma-popup-header h2 {
+    font-size: 32px;
+  }
+
+  .looma-popup-header p {
+    font-size: 13px;
+  }
+
+  .looma-international-list {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .looma-international-item {
+    padding: 15px;
+  }
+
+  .looma-international-item h3 {
+    font-size: 15px;
+  }
+
+  .looma-international-item button {
+    padding: 9px 12px;
+  }
+}
