@@ -3557,3 +3557,79 @@ background:
   }
 
 }
+
+
+
+
+
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px 0 0;
+  margin: 0;
+}
+
+
+/* =========================================================
+   LOOMA LOGO
+   ========================================================= */
+
+.travel-logo {
+  position: relative;
+
+  width: 145px;
+  height: 70px;
+
+  display: block;
+  flex-shrink: 0;
+
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Both logos occupy EXACTLY the same box */
+
+.travel-logo img {
+  position: absolute;
+
+  top: 50%;
+  left: 0;
+
+  width: 145px;
+  height: 70px;
+
+  transform: translateY(-50%);
+
+  object-fit: contain;
+  object-position: left center;
+
+  display: block;
+}
+
+
+/* =========================================================
+   LIGHT / DARK
+   ========================================================= */
+
+.logo-light {
+  display: block;
+  left: -30px !important;
+}
+
+.logo-dark {
+  display: none;
+  left: -20px !important;
+}
+
+

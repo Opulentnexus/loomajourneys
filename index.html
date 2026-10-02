@@ -1414,9 +1414,23 @@ a {
 <header class="travel-header" id="travelHeader">
   <div class="header-container">
  
-     <a href="#home" class="travel-logo" aria-label="Looma Journeys Home">
-      <img src="logooflooma.png" alt="Looma Journeys">
-    </a>
+      <a href="#home" class="travel-logo" aria-label="Looma Journeys Home">
+
+    <!-- Light Mode Logo -->
+    <img 
+      src="logooflooma.png" 
+      class="logo-light" 
+      alt="Looma Journeys"
+    >
+
+    <!-- Dark Mode Logo -->
+    <img 
+      src="loomalogodark.png" 
+      class="logo-dark" 
+      alt="Looma Journeys"
+    >
+
+  </a>
 
 
     <nav class="desktop-nav" aria-label="Primary navigation">
@@ -1976,7 +1990,7 @@ worth remembering.
 
       <article class="looma-package-card">
         <div class="looma-package-image">
-          <img src="pilgrim.jpg">
+          <img src="sabarimala.jpg">
         </div>
         <div class="looma-package-body">
           <span class="looma-package-tag">PILGRIMAGE</span>
@@ -2365,7 +2379,7 @@ Please share the available options and details. Thank you!`;
     <div class="looma-contact-strip">
       <div class="looma-contact-item">
         <small>Business Phone</small>
-        <strong>+91 9876543210</strong>
+        <strong>+91 8330000696</strong>
       </div>
       
       <div class="looma-contact-item">
@@ -2627,6 +2641,53 @@ Please share the available options and details. Thank you!`;
 
   </div>
 </div>
+
+
+
+
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const lightLogo = document.querySelector(".logo-light");
+  const darkLogo = document.querySelector(".logo-dark");
+
+  function updateLogo() {
+
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+      // Dark mode
+      lightLogo.style.display = "none";
+      darkLogo.style.display = "block";
+    } else {
+      // Light mode
+      lightLogo.style.display = "block";
+      darkLogo.style.display = "none";
+    }
+
+  }
+
+  // Run when page loads
+  updateLogo();
+
+  // Detect system theme changes
+  const theme = window.matchMedia("(prefers-color-scheme: dark)");
+
+  theme.addEventListener("change", updateLogo);
+
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
