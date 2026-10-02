@@ -38,6 +38,10 @@ button{cursor:pointer}
 img{display:block;max-width:100%}
 
 /* ========================= HEADER ============================== */
+/* =========================================================
+   LOOMA HEADER — WHITE FROSTED GLASS
+   ========================================================= */
+
 .travel-header {
   position: fixed;
   inset: 0 0 auto;
@@ -45,20 +49,27 @@ img{display:block;max-width:100%}
 
   height: var(--header);
 
-  /* ALWAYS WHITE */
-  background: rgba(255, 255, 255, 0.97) !important;
+  /* Frosted white glass */
+  background: rgba(255, 255, 255, 0.72) !important;
 
-  /* ALWAYS SAME BORDER */
-  border-bottom: 1px solid rgba(20, 35, 30, 0.10) !important;
+  /* Soft glass border */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.55) !important;
 
-  /* ALWAYS SAME SHADOW */
-  box-shadow: 0 2px 12px rgba(20, 35, 30, 0.04) !important;
+  /* Very subtle shadow */
+  box-shadow:
+    0 4px 24px rgba(20, 35, 30, 0.06) !important;
 
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  /* Strong background blur */
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
 
-  color: #111111 !important;
+  color: #111 !important;
 }
+
+
+/* =========================================================
+   HEADER CONTAINER
+   ========================================================= */
 
 .header-container {
   width: min(calc(100% - 48px), var(--container));
@@ -68,6 +79,42 @@ img{display:block;max-width:100%}
   display: flex;
   align-items: center;
   gap: 30px;
+}
+
+
+/* =========================================================
+   NAVIGATION TEXT
+   ========================================================= */
+
+.travel-header a,
+.travel-header span {
+  color: #111 !important;
+}
+
+
+/* =========================================================
+   DARK MODE — KEEP SAME FROSTED WHITE HEADER
+   ========================================================= */
+
+@media (prefers-color-scheme: dark) {
+
+  .travel-header {
+    background: rgba(255, 255, 255, 0.72) !important;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.55) !important;
+
+    box-shadow:
+      0 4px 24px rgba(20, 35, 30, 0.06) !important;
+
+    color: #111 !important;
+  }
+
+  .travel-header a,
+  .travel-header span {
+    color: #111 !important;
+  }
+
 }
 .travel-logo{display:flex;align-items:center;flex:0 0 auto}
 .travel-logo img{width:auto;height:43px;object-fit:contain}
