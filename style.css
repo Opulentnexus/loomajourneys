@@ -2627,3 +2627,45 @@ img{display:block;max-width:100%}
     font-size: 30px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   MOBILE
+   Logo CENTER
+   ========================= */
+
+@media (max-width: 900px) {
+  .header-container {
+    position: relative;
+    min-height: 70px;
+  }
+
+  .travel-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
