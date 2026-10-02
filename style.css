@@ -2637,7 +2637,33 @@ img{display:block;max-width:100%}
 
 
 
+.travel-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.travel-logo img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+}
+
+/* Dark logo hidden normally */
+.logo-dark {
+  display: none !important;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .logo-light {
+    display: none !important;
+  }
+
+  .logo-dark {
+    display: block !important;
+  }
+}
 
 
 
