@@ -1673,149 +1673,178 @@ a {
 </section>
 
 <script>
+/* =========================================================
+   LOOMA INTERNATIONAL DESTINATIONS
+   ========================================================= */
+
 document.addEventListener("DOMContentLoaded", function () {
 
-  const overlay = document.querySelector(".looma-international-overlay");
-  const popup = document.querySelector(".looma-international-popup");
-  const closeBtn = document.querySelector(".looma-popup-close");
-  const exploreBtn = document.querySelector(".looma-explore-btn");
+  const popup = document.getElementById("internationalPopup");
+  const openButton = document.getElementById("loomaExploreInternational");
+  const closeButton = document.getElementById("loomaInternationalClose");
 
-  /* =====================================================
+
+  /* =======================================================
      OPEN POPUP
-     ===================================================== */
+     ======================================================= */
 
-  if (exploreBtn && overlay) {
-    exploreBtn.addEventListener("click", function (e) {
-      e.preventDefault();
+  if (openButton && popup) {
 
-      overlay.classList.add("active");
+    openButton.addEventListener("click", function () {
+
+      popup.classList.add("active");
+      popup.setAttribute("aria-hidden", "false");
+
       document.body.style.overflow = "hidden";
+
     });
+
   }
 
 
-  /* =====================================================
+  /* =======================================================
      CLOSE POPUP
-     ===================================================== */
+     ======================================================= */
 
-  function closeLoomaPopup() {
-    if (!overlay) return;
+  function closeInternationalPopup() {
 
-    overlay.classList.remove("active");
+    if (!popup) return;
+
+    popup.classList.remove("active");
+    popup.setAttribute("aria-hidden", "true");
+
     document.body.style.overflow = "";
+
   }
 
 
-  /* Close button */
+  if (closeButton) {
 
-  if (closeBtn) {
-    closeBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
+    closeButton.addEventListener("click", function () {
 
-      closeLoomaPopup();
+      closeInternationalPopup();
+
     });
+
   }
 
 
-  /* Click outside popup */
+  /* =======================================================
+     CLICK OUTSIDE
+     ======================================================= */
 
-  if (overlay) {
-    overlay.addEventListener("click", function (e) {
+  if (popup) {
 
-      if (e.target === overlay) {
-        closeLoomaPopup();
+    popup.addEventListener("click", function (event) {
+
+      if (event.target === popup) {
+
+        closeInternationalPopup();
+
       }
 
     });
+
   }
 
 
-  /* =====================================================
+  /* =======================================================
      ESC KEY
-     ===================================================== */
+     ======================================================= */
 
-  document.addEventListener("keydown", function (e) {
+  document.addEventListener("keydown", function (event) {
 
-    if (e.key === "Escape") {
-      closeLoomaPopup();
+    if (
+      event.key === "Escape" &&
+      popup &&
+      popup.classList.contains("active")
+    ) {
+
+      closeInternationalPopup();
+
     }
 
   });
 
 
-  /* =====================================================
-     WHATSAPP BUTTONS
-     ===================================================== */
+  /* =======================================================
+     WHATSAPP BUTTONS USING data-place
+     ======================================================= */
 
-  const whatsappButtons =
-    document.querySelectorAll(".looma-whatsapp-btn");
+  document.querySelectorAll(".looma-whatsapp-btn").forEach(function (button) {
 
-  whatsappButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
 
-    button.addEventListener("click", function (e) {
+      const place = this.getAttribute("data-place");
 
-      e.preventDefault();
-      e.stopPropagation();
-
-      /*
-       * Get destination from the card
-       */
-
-      const item = button.closest(".looma-international-item");
-
-      if (!item) return;
-
-      const destinationElement =
-        item.querySelector(".looma-international-info h3");
-
-      if (!destinationElement) return;
-
-      const destination =
-        destinationElement.textContent.trim();
-
-
-      /*
-       * WhatsApp message
-       */
-
-      const message =
-        "Hi Looma Journeys! I'm interested in a travel package to " +
-        destination +
-        ". Please share the available packages and details.";
-
-
-      /*
-       * WhatsApp number
-       *
-       * CHANGE THIS NUMBER
-       * Include country code.
-       *
-       * Example:
-       * 919876543210
-       */
-
-      const phoneNumber = "918330000696";
-
-
-      /*
-       * Open WhatsApp
-       */
-
-      const whatsappURL =
-        "https://wa.me/" +
-        phoneNumber +
-        "?text=" +
-        encodeURIComponent(message);
-
-
-      window.open(whatsappURL, "_blank");
+      if (place) {
+        sendInternationalWhatsApp(place);
+      }
 
     });
 
   });
 
 });
+
+
+/* =========================================================
+   GLOBAL WHATSAPP FUNCTION
+   =========================================================
+   
+   This is intentionally OUTSIDE DOMContentLoaded.
+
+   Therefore:
+   
+   onclick="sendInternationalWhatsApp('Bali')"
+   
+   will also work.
+   ========================================================= */
+
+function sendInternationalWhatsApp(place) {
+
+  /* =======================================================
+     CHANGE THIS TO YOUR LOOMA WHATSAPP NUMBER
+     ======================================================= */
+
+  const phoneNumber = "918330000696";
+
+
+  /* =======================================================
+     MESSAGE
+     ======================================================= */
+
+  const message =
+    "Hi Looma Journeys! 👋\n\n" +
+    "I'm interested in planning a trip to " +
+    place +
+    ".\n\n" +
+    "Please share the available packages, " +
+    "itinerary and pricing.";
+
+
+  /* =======================================================
+     WHATSAPP URL
+     ======================================================= */
+
+  const whatsappURL =
+    "https://wa.me/" +
+    phoneNumber +
+    "?text=" +
+    encodeURIComponent(message);
+
+
+  /* =======================================================
+     OPEN WHATSAPP
+     ======================================================= */
+
+  window.open(
+    whatsappURL,
+    "_blank",
+    "noopener,noreferrer"
+  );
+
+}
 </script>
 
 
