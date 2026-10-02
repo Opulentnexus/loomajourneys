@@ -171,7 +171,7 @@ html body .travel-header button {
 .phone-text{display:flex;flex-direction:column;line-height:1.1}
 .phone-text small{font-size:9px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
 .phone-text strong{font-size:12px;color:var(--navy);font-weight:700}
-.plan-btn,.hero-main-btn,.contact-button,.modal-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:0 20px;border:1px solid var(--navy);border-radius:7px;background:var(--navy);color:#fff;font-size:13px;font-weight:700;letter-spacing:.01em;transition:.2s var(--ease)}
+.plan-btn,.hero-main-btn,.contact-button,.modal-button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:44px;padding:0 20px;border:1px solid var(--navy);border-radius:7px;background:var(--white);color:#fff;font-size:13px;font-weight:700;letter-spacing:.01em;transition:.2s var(--ease)}
 .plan-btn:hover,.hero-main-btn:hover,.contact-button:hover,.modal-button:hover{background:var(--navy-2);transform:translateY(-1px);box-shadow:0 7px 18px rgba(22,36,31,.13)}
 .plan-btn svg{width:15px;height:15px}
 .menu-toggle{display:none;width:42px;height:42px;padding:8px;border:1px solid var(--line);border-radius:8px;background:#fff}
