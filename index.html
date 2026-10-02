@@ -7,7 +7,7 @@
   <title>Looma Journeys | Curating journeys, creating memories.</title>
   <meta name="description" content="Looma Journeys is a Kerala-based travel company creating personalized journeys across Kerala, India and beyond — including holidays, pilgrimage, medical travel, private journeys and corporate travel.">
   <meta name="keywords" content="Looma Journeys, Kerala travel, Kerala tour packages, Sabarimala pilgrimage, pilgrimage travel, medical tourism Kerala, India holidays, international holidays, customized travel, corporate travel">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -2010,29 +2010,37 @@ worth remembering.
       </article>
 
       <article class="looma-package-card">
-        <div class="looma-package-image">
-          <img src="maldives.jpg" alt="Maldives holiday">
-        </div>
-        <div class="looma-package-body">
-          <span class="looma-package-tag">INTERNATIONAL</span>
-          <h3>Maldives Escape</h3>
-          <div class="looma-package-meta">Custom duration · Resort options</div>
-         
-          <ul class="looma-package-includes">
-            <li>Resort accommodation</li>
-            <li>Airport / resort transfers</li>
-            <li>Meal plan options</li>
-            <li>Island experiences</li>
-            <li>Travel coordination</li>
-          </ul>
-          <a class="looma-package-link"
-   href="https://wa.me/918330000696?text=Hi%20Looma%2C%20I%27m%20interested%20in%20the%20Maldives%20%C2%B7%20Escape%29."
-   target="_blank">
-  View Package <span>→</span>
-</a>
-          
-        </div>
-      </article>
+  <div class="looma-package-image">
+    <img src="lakshadweep.jpg" alt="Lakshadweep holiday">
+  </div>
+
+  <div class="looma-package-body">
+    <span class="looma-package-tag">DOMESTIC</span>
+
+    <h3>Lakshadweep Escape</h3>
+
+    <div class="looma-package-meta">
+      Custom duration · Resort options
+    </div>
+
+    <ul class="looma-package-includes">
+      <li>Resort accommodation</li>
+      <li>Airport / island transfers</li>
+      <li>Meal plan options</li>
+      <li>Island experiences</li>
+      <li>Travel coordination</li>
+    </ul>
+
+    <a
+      class="looma-package-link"
+      href="https://wa.me/918330000696?text=Hi%20Looma%2C%20I%27m%20interested%20in%20the%20Lakshadweep%20Escape."
+      target="_blank"
+      rel="noopener"
+    >
+      View Package <span>→</span>
+    </a>
+  </div>
+</article>
     </div>
 
     <div class="looma-actions">
@@ -2064,9 +2072,7 @@ worth remembering.
         <div class="looma-pilgrim-place"><strong>Sabarimala</strong><span>Kerala</span></div>
         <div class="looma-pilgrim-place"><strong>Guruvayur</strong><span>Kerala</span></div>
         <div class="looma-pilgrim-place"><strong>Padmanabhaswamy Temple</strong><span>Thiruvananthapuram</span></div>
-        <div class="looma-pilgrim-place"><strong>Tirupati</strong><span>Andhra Pradesh</span></div>
-        <div class="looma-pilgrim-place"><strong>Madurai</strong><span>Tamil Nadu</span></div>
-        <div class="looma-pilgrim-place"><strong>Rameswaram</strong><span>Tamil Nadu</span></div>
+        
         <div class="looma-pilgrim-place"><strong>International Pilgrim</strong><span>Jerusalem</span></div>
 
 
@@ -2522,9 +2528,9 @@ Please share the available options and details. Thank you!`;
           <span>01</span>
           <h3>Singapore</h3>
         </div>
-        <button onclick="sendInternationalWhatsApp('Singapore')">
-          WhatsApp <span>↗</span>
-        </button>
+         <button onclick="sendInternationalWhatsApp('Singapore')" class="looma-whatsapp-btn" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</button>
       </div>
 
       <div class="looma-international-item">
@@ -2532,9 +2538,9 @@ Please share the available options and details. Thank you!`;
           <span>02</span>
           <h3>Thailand</h3>
         </div>
-        <button onclick="sendInternationalWhatsApp('Thailand')">
-          WhatsApp <span>↗</span>
-        </button>
+        <button onclick="sendInternationalWhatsApp('Thailand')" class="looma-whatsapp-btn" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</button>
       </div>
 
       <div class="looma-international-item">
@@ -2542,9 +2548,9 @@ Please share the available options and details. Thank you!`;
           <span>03</span>
           <h3>Malaysia</h3>
         </div>
-        <button onclick="sendInternationalWhatsApp('Malaysia')">
-          WhatsApp <span>↗</span>
-        </button>
+        <button onclick="sendInternationalWhatsApp('Malaysia')" class="looma-whatsapp-btn" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</button>
       </div>
 
       <div class="looma-international-item">
@@ -2552,9 +2558,9 @@ Please share the available options and details. Thank you!`;
           <span>04</span>
           <h3>Vietnam</h3>
         </div>
-        <button onclick="sendInternationalWhatsApp('Vietnam')">
-          WhatsApp <span>↗</span>
-        </button>
+        <button onclick="sendInternationalWhatsApp('Vietnam')" class="looma-whatsapp-btn" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</button>
       </div>
 
       <div class="looma-international-item">
@@ -2562,9 +2568,9 @@ Please share the available options and details. Thank you!`;
           <span>05</span>
           <h3>Turkey</h3>
         </div>
-        <button onclick="sendInternationalWhatsApp('Turkey')">
-          WhatsApp <span>↗</span>
-        </button>
+         <button onclick="sendInternationalWhatsApp('Turkey')" class="looma-whatsapp-btn" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</button>
       </div>
 
       <div class="looma-international-item">
@@ -2572,9 +2578,9 @@ Please share the available options and details. Thank you!`;
           <span>06</span>
           <h3>Georgia</h3>
         </div>
-        <button onclick="sendInternationalWhatsApp('Georgia')">
-          WhatsApp <span>↗</span>
-        </button>
+         <button onclick="sendInternationalWhatsApp('Georgia')" class="looma-whatsapp-btn" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</button>
       </div>
 
       <div class="looma-international-item">
@@ -2582,9 +2588,9 @@ Please share the available options and details. Thank you!`;
           <span>07</span>
           <h3>Indonesia</h3>
         </div>
-        <button onclick="sendInternationalWhatsApp('Indonesia')">
-          WhatsApp <span>↗</span>
-        </button>
+         <button onclick="sendInternationalWhatsApp('Indonesia')" class="looma-whatsapp-btn" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</button>
       </div>
 
       <div class="looma-international-item">
@@ -2592,9 +2598,9 @@ Please share the available options and details. Thank you!`;
           <span>08</span>
           <h3>Switzerland</h3>
         </div>
-        <button onclick="sendInternationalWhatsApp('Switzerland')">
-          WhatsApp <span>↗</span>
-        </button>
+         <button onclick="sendInternationalWhatsApp('Switzerland')" class="looma-whatsapp-btn" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</button>
       </div>
 
       <div class="looma-international-item">
@@ -2602,9 +2608,9 @@ Please share the available options and details. Thank you!`;
           <span>09</span>
           <h3>Paris</h3>
         </div>
-        <button onclick="sendInternationalWhatsApp('Paris')">
-          WhatsApp <span>↗</span>
-        </button>
+         <button onclick="sendInternationalWhatsApp('Paris')" class="looma-whatsapp-btn" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</button>
       </div>
 
       <div class="looma-international-item">
@@ -2612,9 +2618,9 @@ Please share the available options and details. Thank you!`;
           <span>10</span>
           <h3>London</h3>
         </div>
-        <button onclick="sendInternationalWhatsApp('London')">
-          WhatsApp <span>↗</span>
-        </button>
+        <button onclick="sendInternationalWhatsApp('London')" class="looma-whatsapp-btn" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</button>
       </div>
 
       <div class="looma-international-item">
@@ -2622,9 +2628,9 @@ Please share the available options and details. Thank you!`;
           <span>11</span>
           <h3>Europe</h3>
         </div>
-        <button onclick="sendInternationalWhatsApp('Europe')">
-          WhatsApp <span>↗</span>
-        </button>
+         <button onclick="sendInternationalWhatsApp('Europe')" class="looma-whatsapp-btn" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</button>
       </div>
 
       <div class="looma-international-item">
@@ -2632,9 +2638,9 @@ Please share the available options and details. Thank you!`;
           <span>12</span>
           <h3>Egypt</h3>
         </div>
-        <button onclick="sendInternationalWhatsApp('Egypt')">
-          WhatsApp <span>↗</span>
-        </button>
+        <button onclick="sendInternationalWhatsApp('Egypt')" class="looma-whatsapp-btn" aria-label="WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</button>
       </div>
 
     </div>
