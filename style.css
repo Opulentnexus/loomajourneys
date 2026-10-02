@@ -65,8 +65,39 @@ img{display:block;max-width:100%}
   position: relative;
 }
 
-.travel-logo{display:flex;align-items:center;flex:0 0 auto}
-.travel-logo img{width:auto;height:43px;object-fit:contain}
+.travel-logo {
+  display: flex;
+  align-items: center;
+  flex: 0 0 auto;
+  position: relative;
+}
+
+.travel-logo img {
+  width: auto;
+  height: 43px;
+  object-fit: contain;
+}
+
+/* Light mode */
+.travel-logo .logo-light {
+  display: block;
+}
+
+.travel-logo .logo-dark {
+  display: none;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .travel-logo .logo-light {
+    display: none;
+  }
+
+  .travel-logo .logo-dark {
+    display: block;
+  }
+}
+
 .desktop-nav{display:flex;align-items:center;justify-content:center;gap:4px;flex:1;height:100%}
 .nav-item{position:relative;height:100%;display:flex;align-items:center}
 .nav-item>a{display:flex;align-items:center;gap:7px;padding:9px 12px;border-radius:8px;color:#39433f;font-size:14px;font-weight:600;letter-spacing:.01em;transition:.2s var(--ease)}
