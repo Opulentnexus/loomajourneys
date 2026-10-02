@@ -42,133 +42,57 @@ img{display:block;max-width:100%}
    LOOMA HEADER — WHITE FROSTED GLASS
    ========================================================= */
 
-.travel-header {
-  position: fixed;
-  inset: 0 0 auto;
-  z-index: 1000;
-
-  height: var(--header);
-
-  /* Frosted white glass */
-  background: rgba(255, 255, 255, 0.72) !important;
-
-  /* Soft glass border */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.55) !important;
-
-  /* Very subtle shadow */
-  box-shadow:
-    0 4px 24px rgba(20, 35, 30, 0.06) !important;
-
-  /* Strong background blur */
-  backdrop-filter: blur(20px) saturate(120%);
-  -webkit-backdrop-filter: blur(20px) saturate(120%);
-
-  color: #111 !important;
-}
-
-
 /* =========================================================
-   HEADER CONTAINER
-   ========================================================= */
-/* =========================================================
-   LOOMA HEADER — FROSTED WHITE GLASS
-   FINAL OVERRIDE
+   LOOMA — MORE TRANSPARENT GLASS HEADER
    ========================================================= */
 
 html body .travel-header {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
+  background: rgba(255, 255, 255, 0.28) !important;
 
-  z-index: 99999 !important;
+  backdrop-filter: blur(18px) saturate(120%) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(120%) !important;
 
-  height: var(--header) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35) !important;
 
-  /* TRANSPARENT WHITE */
-  background-color: rgba(255, 255, 255, 0.62) !important;
-  background-image: none !important;
-
-  /* GLASS */
-  -webkit-backdrop-filter: blur(25px) saturate(140%) !important;
-  backdrop-filter: blur(25px) saturate(140%) !important;
-
-  /* BORDER */
-  border: none !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.7) !important;
-
-  /* SHADOW */
   box-shadow:
-    0 4px 30px rgba(0, 0, 0, 0.06) !important;
+    0 4px 25px rgba(0, 0, 0, 0.04) !important;
 
   color: #111 !important;
-
-  isolation: isolate;
 }
 
 
-/* =========================================================
-   HEADER CONTAINER
-   ========================================================= */
+/* Keep the same in dark mode */
+
+@media (prefers-color-scheme: dark) {
+
+  html body .travel-header {
+    background: rgba(255, 255, 255, 0.28) !important;
+
+    backdrop-filter: blur(18px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(18px) saturate(120%) !important;
+
+    border-bottom:
+      1px solid rgba(255, 255, 255, 0.35) !important;
+
+    color: #111 !important;
+  }
+
+}
+
+
+/* Header content */
 
 html body .travel-header .header-container {
-  width: min(calc(100% - 48px), var(--container)) !important;
-  height: 100% !important;
-
-  margin: auto !important;
-
-  display: flex !important;
-  align-items: center !important;
-
-  gap: 30px !important;
+  background: transparent !important;
 }
 
 
-/* =========================================================
-   HEADER TEXT
-   ========================================================= */
+/* Navigation */
 
 html body .travel-header a,
 html body .travel-header span,
 html body .travel-header button {
   color: #111 !important;
-}
-
-
-/* =========================================================
-   FORCE DARK MODE TO STAY FROSTED WHITE
-   ========================================================= */
-
-@media (prefers-color-scheme: dark) {
-
-  html body .travel-header {
-
-    background-color:
-      rgba(255, 255, 255, 0.62) !important;
-
-    background-image: none !important;
-
-    -webkit-backdrop-filter:
-      blur(25px) saturate(140%) !important;
-
-    backdrop-filter:
-      blur(25px) saturate(140%) !important;
-
-    border-bottom:
-      1px solid rgba(255, 255, 255, 0.7) !important;
-
-    box-shadow:
-      0 4px 30px rgba(0, 0, 0, 0.06) !important;
-
-    color: #111 !important;
-  }
-
-  html body .travel-header a,
-  html body .travel-header span,
-  html body .travel-header button {
-    color: #111 !important;
-  }
-
 }
 .travel-logo{display:flex;align-items:center;flex:0 0 auto}
 .travel-logo img{width:auto;height:43px;object-fit:contain}
