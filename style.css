@@ -37,6 +37,22 @@ button,input,textarea,select{font:inherit}
 button{cursor:pointer}
 img{display:block;max-width:100%}
 
+
+
+@media (max-width: 768px) {
+  .travel-header .nav-menu {
+    top: calc(var(--header) + 10px) !important;
+  }
+}
+
+
+
+
+
+
+
+
+
 /* ========================= HEADER ============================== */
 /* =========================================================
    LOOMA HEADER — FROSTED WHITE GLASS
