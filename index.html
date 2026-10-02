@@ -1673,27 +1673,24 @@ a {
 </section>
 
 <script>
-/* =========================================================
-   LOOMA INTERNATIONAL DESTINATIONS
-   ========================================================= */
-
 document.addEventListener("DOMContentLoaded", function () {
 
   const popup = document.getElementById("internationalPopup");
-  const openButton = document.getElementById("loomaExploreInternational");
-  const closeButton = document.getElementById("loomaInternationalClose");
+  const openBtn = document.getElementById("loomaExploreInternational");
+  const closeBtn = document.getElementById("loomaInternationalClose");
 
-
-  /* =======================================================
+  /* =========================================================
      OPEN POPUP
-     ======================================================= */
+     ========================================================= */
 
-  if (openButton && popup) {
+  if (openBtn && popup) {
 
-    openButton.addEventListener("click", function () {
+    openBtn.addEventListener("click", function (e) {
+
+      e.preventDefault();
+      e.stopPropagation();
 
       popup.classList.add("active");
-      popup.setAttribute("aria-hidden", "false");
 
       document.body.style.overflow = "hidden";
 
@@ -1702,44 +1699,50 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-/* =======================================================
+  /* =========================================================
      CLOSE POPUP
-     ======================================================= */
+     ========================================================= */
 
-  function closeInternationalPopup() {
+  function closePopup(e) {
 
-    if (!popup) return;
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
 
     popup.classList.remove("active");
-    popup.setAttribute("aria-hidden", "true");
 
     document.body.style.overflow = "";
 
   }
 
 
-  if (closeButton) {
+  /* =========================================================
+     CLOSE BUTTON
+     ========================================================= */
 
-    closeButton.addEventListener("click", function () {
+  if (closeBtn && popup) {
 
-      closeInternationalPopup();
+    closeBtn.addEventListener("click", function (e) {
+
+      closePopup(e);
 
     });
 
   }
 
 
-  /* =======================================================
-     CLICK OUTSIDE
-     ======================================================= */
+  /* =========================================================
+     CLICK DARK BACKGROUND TO CLOSE
+     ========================================================= */
 
   if (popup) {
 
-    popup.addEventListener("click", function (event) {
+    popup.addEventListener("click", function (e) {
 
-      if (event.target === popup) {
+      if (e.target === popup) {
 
-        closeInternationalPopup();
+        closePopup(e);
 
       }
 
@@ -1748,38 +1751,41 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 
-  /* =======================================================
-     ESC KEY
-     ======================================================= */
+  /* =========================================================
+     ESC TO CLOSE
+     ========================================================= */
 
-  document.addEventListener("keydown", function (event) {
+  document.addEventListener("keydown", function (e) {
 
-    if (
-      event.key === "Escape" &&
-      popup &&
-      popup.classList.contains("active")
-    ) {
+    if (e.key === "Escape") {
 
-      closeInternationalPopup();
+      if (popup.classList.contains("active")) {
+
+        closePopup(e);
+
+      }
 
     }
 
   });
 
 
-  /* =======================================================
-     WHATSAPP BUTTONS USING data-place
-     ======================================================= */
+  /* =========================================================
+     WHATSAPP BUTTONS
+     ========================================================= */
 
   document.querySelectorAll(".looma-whatsapp-btn").forEach(function (button) {
 
-    button.addEventListener("click", function () {
+    button.addEventListener("click", function (e) {
 
-      const place = this.getAttribute("data-place");
+      e.preventDefault();
+      e.stopPropagation();
 
-      if (place) {
-        sendInternationalWhatsApp(place);
-      }
+      const place = button.getAttribute("data-place");
+
+      if (!place) return;
+
+      sendInternationalWhatsApp(place);
 
     });
 
@@ -1789,43 +1795,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 /* =========================================================
-   GLOBAL WHATSAPP FUNCTION
-   =========================================================
-   
-   This is intentionally OUTSIDE DOMContentLoaded.
-
-   Therefore:
-   
-   onclick="sendInternationalWhatsApp('Bali')"
-   
-   will also work.
+   WHATSAPP
    ========================================================= */
 
 function sendInternationalWhatsApp(place) {
 
-  /* =======================================================
-     CHANGE THIS TO YOUR LOOMA WHATSAPP NUMBER
-     ======================================================= */
-
   const phoneNumber = "918330000696";
-
-
-  /* =======================================================
-     MESSAGE
-     ======================================================= */
 
   const message =
     "Hi Looma Journeys! 👋\n\n" +
     "I'm interested in planning a trip to " +
     place +
     ".\n\n" +
-    "Please share the available packages, " +
-    "itinerary and pricing.";
-
-
-  /* =======================================================
-     WHATSAPP URL
-     ======================================================= */
+    "Please share the available packages, itinerary and pricing.";
 
   const whatsappURL =
     "https://wa.me/" +
@@ -1833,16 +1815,7 @@ function sendInternationalWhatsApp(place) {
     "?text=" +
     encodeURIComponent(message);
 
-
-  /* =======================================================
-     OPEN WHATSAPP
-     ======================================================= */
-
-  window.open(
-    whatsappURL,
-    "_blank",
-    "noopener,noreferrer"
-  );
+  window.open(whatsappURL, "_blank");
 
 }
 </script>
