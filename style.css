@@ -41,7 +41,7 @@ img{display:block;max-width:100%}
 
 @media (max-width: 768px) {
   .travel-header .nav-menu {
-    top: calc(var(--header) + 10px) !important;
+    top: calc(var(--header) + 30px) !important;
   }
 }
 
