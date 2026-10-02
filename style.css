@@ -3151,8 +3151,116 @@ img{display:block;max-width:100%}
 
 
 
+/* =========================================================
+   LOOMA HEADER — ALWAYS LIGHT / WHITE
+   Works in both Light Mode and Dark Mode
+   ========================================================= */
+
+.travel-header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 1000;
+
+  height: var(--header);
+
+  background: rgba(255, 255, 255, 0.97) !important;
+  color: #111111 !important;
+
+  border-bottom: 1px solid rgba(20, 35, 30, 0.10) !important;
+
+  box-shadow: 0 2px 12px rgba(20, 35, 30, 0.04) !important;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+
+/* Header container */
+.travel-header .header-container {
+  color: #111111 !important;
+}
+
+
+/* Header links */
+.travel-header a {
+  color: #111111 !important;
+}
+
+
+/* Header text */
+.travel-header span,
+.travel-header p,
+.travel-header li {
+  color: #111111 !important;
+}
+
+
+/* Logo stays normal */
+.travel-header .travel-logo {
+  color: #111111 !important;
+}
+
+
+/* Navigation */
+.travel-header .nav-links a {
+  color: #111111 !important;
+}
+
+
+/* Hamburger */
+.travel-header .menu-toggle {
+  color: #111111 !important;
+}
+
+
+/* Hamburger lines */
+.travel-header .menu-toggle span,
+.travel-header .menu-toggle::before,
+.travel-header .menu-toggle::after {
+  background: #111111 !important;
+}
+
+
+/* =========================================================
+   FORCE SAME HEADER IN SYSTEM DARK MODE
+   ========================================================= */
+
 @media (prefers-color-scheme: dark) {
+
   .travel-header {
-    background: #111 !important;
+    background: rgba(255, 255, 255, 0.97) !important;
+
+    color: #111111 !important;
+
+    border-bottom-color:
+      rgba(20, 35, 30, 0.10) !important;
+
+    box-shadow:
+      0 2px 12px rgba(20, 35, 30, 0.04) !important;
+  }
+
+  .travel-header .header-container {
+    color: #111111 !important;
+  }
+
+  .travel-header a,
+  .travel-header span,
+  .travel-header p,
+  .travel-header li {
+    color: #111111 !important;
+  }
+
+  .travel-header .nav-links a {
+    color: #111111 !important;
+  }
+
+  .travel-header .menu-toggle {
+    color: #111111 !important;
+  }
+
+  .travel-header .menu-toggle span,
+  .travel-header .menu-toggle::before,
+  .travel-header .menu-toggle::after {
+    background: #111111 !important;
   }
 }
