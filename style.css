@@ -58,8 +58,8 @@ html body .travel-header {
   background-image: none !important;
 
   /* GLASS */
-  -webkit-backdrop-filter: blur(25px) saturate(140%) !important;
-  backdrop-filter: blur(15px) saturate(140%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(140%) !important;
+  backdrop-filter: blur(12px) saturate(140%) !important;
 
   /* BORDER */
   border: none !important;
