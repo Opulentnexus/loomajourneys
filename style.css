@@ -700,47 +700,62 @@ background:
 
 
 
-/* ========================= INTRO =============================== */
+/* =========================================================
+   INTRO SECTION
+========================================================= */
 
-.intro-section{
-  padding:90px 24px;
-  background:var(--surface);
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
+.intro-section {
+  padding: 100px 24px;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
 }
 
-.intro-inner{
-  width:min(100%,var(--container));
-  margin:auto;
+.intro-inner {
+  width: min(100%, var(--container));
+  margin: 0 auto;
 }
 
-.intro-top{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding-bottom:18px;
-  margin-bottom:55px;
-  border-bottom:1px solid var(--line);
+/* =========================
+   TOP BAR
+========================= */
+
+.intro-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 18px;
+  margin-bottom: 60px;
+  border-bottom: 1px solid var(--line);
 }
 
-.intro-label{
-  color:var(--muted);
-  font-size:11px;
-  font-weight:700;
-  letter-spacing:.12em;
-  text-transform:uppercase;
+.intro-label {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.intro-number{
-  color:var(--gold-dark);
-  font:700 14px Manrope,sans-serif;
+.intro-number {
+  color: var(--gold-dark);
+  font: 700 14px Manrope, sans-serif;
 }
 
-.intro-grid{
-  display:grid;
-  grid-template-columns:42% 1fr;
-  gap:70px;
-  align-items:start;
+/* =========================
+   MAIN CONTENT
+========================= */
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+  column-gap: clamp(50px, 7vw, 110px);
+  align-items: start;
+}
+
+.intro-heading {
+  padding-top: 2px;
 }
 
 .intro-heading h2,
@@ -748,11 +763,11 @@ background:
 .services-intro h2,
 .testimonials-head h2,
 .faq-head h2,
-.contact-content h2{
-  margin:0;
-  color:var(--navy);
-  font:700 clamp(32px,4vw,52px)/1.12 Manrope,sans-serif;
-  letter-spacing:-.035em;
+.contact-content h2 {
+  margin: 0;
+  color: var(--navy);
+  font: 700 clamp(34px, 4vw, 52px) / 1.12 Manrope, sans-serif;
+  letter-spacing: -0.035em;
 }
 
 .intro-heading h2 em,
@@ -760,200 +775,330 @@ background:
 .services-intro h2 em,
 .testimonials-head h2 em,
 .faq-head h2 em,
-.contact-content h2 em{
-  color:var(--gold-dark);
-  font-style:normal;
+.contact-content h2 em {
+  color: var(--gold-dark);
+  font-style: normal;
 }
 
-.intro-content{
-  max-width:680px;
+/* =========================
+   CONTENT
+========================= */
+
+.intro-content {
+  width: 100%;
+  max-width: 680px;
 }
 
-.intro-lead{
-  margin:0 0 20px;
-  color:var(--text);
-  font-size:19px;
-  font-weight:500;
-  line-height:1.6;
+.intro-lead {
+  margin: 0 0 22px;
+  color: var(--text);
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.65;
 }
 
-.intro-content>p:not(.intro-lead){
-  margin:0;
-  color:var(--muted);
-  font-size:15px;
-  line-height:1.8;
+.intro-content > p:not(.intro-lead) {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.85;
 }
 
-.intro-link{
-  display:inline-flex;
-  align-items:center;
-  gap:12px;
-  margin-top:28px;
-  color:var(--navy);
-  font-size:12px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-  transition:.25s ease;
+/* =========================
+   LINK
+========================= */
+
+.intro-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 30px;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  transition: color 0.25s ease;
 }
 
-.intro-link span{
-  display:grid;
-  place-items:center;
-  width:32px;
-  height:32px;
-  border:1px solid var(--line-dark);
-  border-radius:50%;
-  transition:.25s ease;
+.intro-link span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  border: 1px solid var(--line-dark);
+  border-radius: 50%;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
 }
 
-.intro-link:hover{
-  color:var(--gold-dark);
+.intro-link:hover {
+  color: var(--gold-dark);
 }
 
-.intro-link:hover span{
-  transform:translateX(4px);
-  border-color:var(--gold);
+.intro-link:hover span {
+  transform: translateX(4px);
+  border-color: var(--gold);
 }
 
-.intro-bottom{
-  display:flex;
-  align-items:center;
-  gap:30px;
-  margin-top:65px;
+/* =========================
+   BOTTOM FEATURES
+========================= */
+
+.intro-bottom {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  width: 100%;
+  margin-top: 75px;
 }
 
-.intro-line{
-  flex:1;
-  height:1px;
-  background:var(--line-dark);
+.intro-line {
+  flex: 1 1 auto;
+  height: 1px;
+  background: var(--line-dark);
 }
 
-.intro-features{
-  display:flex;
-  gap:45px;
+.intro-features {
+  display: flex;
+  align-items: flex-start;
+  gap: 55px;
+  flex-shrink: 0;
 }
 
-.intro-features div{
-  min-width:110px;
-  display:flex;
-  flex-direction:column;
-  gap:4px;
+.intro-features div {
+  min-width: 105px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
-.intro-features strong{
-  color:var(--navy);
-  font:700 20px Manrope,sans-serif;
+.intro-features strong {
+  color: var(--navy);
+  font: 700 20px / 1.2 Manrope, sans-serif;
+  white-space: nowrap;
 }
 
-.intro-features span{
-  color:var(--muted);
-  font-size:10px;
-  line-height:1.4;
-  text-transform:uppercase;
-  letter-spacing:.05em;
+.intro-features span {
+  color: var(--muted);
+  font-size: 10px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-/* ========================= TABLET =============================== */
+/* =========================================================
+   TABLET
+========================================================= */
 
-@media(max-width:900px){
+@media (max-width: 900px) {
 
-  .intro-section{
-    padding:75px 22px;
+  .intro-section {
+    padding: 80px 22px;
   }
 
-  .intro-top{
-    margin-bottom:40px;
+  .intro-top {
+    margin-bottom: 45px;
   }
 
-  .intro-grid{
-    grid-template-columns:1fr;
-    gap:30px;
+  .intro-grid {
+    grid-template-columns: 1fr;
+    row-gap: 35px;
   }
 
-  .intro-heading h2{
-    max-width:650px;
+  .intro-heading h2 {
+    max-width: 650px;
   }
 
-  .intro-content{
-    max-width:720px;
+  .intro-content {
+    max-width: 720px;
   }
 
-  .intro-bottom{
-    margin-top:55px;
+  .intro-bottom {
+    margin-top: 60px;
+    gap: 30px;
   }
 
+  .intro-features {
+    gap: 35px;
+  }
 }
 
-/* ========================= MOBILE =============================== */
+/* =========================================================
+   MOBILE
+========================================================= */
 
-@media(max-width:600px){
+@media (max-width: 600px) {
 
-  .intro-bottom{
-    display:block;
-    width:100%;
+  .intro-section {
+    padding: 65px 20px;
   }
 
-  .intro-line{
-    width:100%;
-    margin-bottom:24px;
+  /* Top */
+
+  .intro-top {
+    margin-bottom: 38px;
+    padding-bottom: 15px;
   }
 
-  .intro-features{
-    display:flex !important;
-    flex-direction:row !important;
-    flex-wrap:nowrap !important;
-    justify-content:space-between;
-    align-items:flex-start;
-    width:100%;
-    gap:8px;
+  .intro-label {
+    font-size: 9px;
+    letter-spacing: 0.1em;
   }
 
-  .intro-features div{
-    flex:1 1 0;
-    min-width:0;
-    width:33.333%;
+  .intro-number {
+    font-size: 12px;
   }
 
-  .intro-features strong{
-    font-size:16px;
-    line-height:1.2;
+  /* Main */
+
+  .intro-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
   }
 
-  .intro-features span{
-    display:block;
-    font-size:8px;
-    line-height:1.4;
-    white-space:normal;
+  .intro-heading h2 {
+    max-width: 100%;
+    font-size: clamp(30px, 8vw, 40px);
+    line-height: 1.12;
   }
 
+  .intro-content {
+    max-width: 100%;
+  }
+
+  .intro-lead {
+    margin-bottom: 18px;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .intro-content > p:not(.intro-lead) {
+    font-size: 14px;
+    line-height: 1.75;
+  }
+
+  /* Link */
+
+  .intro-link {
+    margin-top: 25px;
+    font-size: 11px;
+  }
+
+  .intro-link span {
+    width: 32px;
+    height: 32px;
+    flex-basis: 32px;
+  }
+
+  /* Bottom */
+
+  .intro-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    margin-top: 55px;
+  }
+
+  .intro-line {
+    width: 100%;
+    height: 1px;
+    margin-bottom: 25px;
+  }
+
+  /* Features */
+
+  .intro-features {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    width: 100%;
+  }
+
+  .intro-features div {
+    min-width: 0;
+    width: 100%;
+    gap: 5px;
+  }
+
+  .intro-features strong {
+    font-size: 16px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .intro-features span {
+    display: block;
+    font-size: 8px;
+    line-height: 1.45;
+    letter-spacing: 0.04em;
+  }
 }
 
-/* ========================= SMALL MOBILE =============================== */
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
-@media(max-width:380px){
+@media (max-width: 380px) {
 
-  .intro-section{
-    padding:50px 16px;
+  .intro-section {
+    padding: 55px 16px;
   }
 
-  .intro-heading h2{
-    font-size:30px;
+  .intro-top {
+    margin-bottom: 32px;
   }
 
-  .intro-features{
-    gap:10px;
+  .intro-heading h2 {
+    font-size: 29px;
   }
 
-  .intro-features strong{
-    font-size:17px;
+  .intro-lead {
+    font-size: 16px;
   }
 
-  .intro-features span{
-    font-size:8px;
+  .intro-content > p:not(.intro-lead) {
+    font-size: 13px;
   }
 
+  .intro-bottom {
+    margin-top: 45px;
+  }
+
+  .intro-features {
+    gap: 8px;
+  }
+
+  .intro-features strong {
+    font-size: 15px;
+  }
+
+  .intro-features span {
+    font-size: 7.5px;
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ========================= DESTINATIONS ======================== */
 .destinations-section{padding:110px 24px;background:#fff}
@@ -3652,4 +3797,692 @@ background:
 .looma-whatsapp-btn i {
   font-size: 24px;
   line-height: 1;
+}
+
+
+
+
+
+
+
+
+/* =========================================================
+   LOOMA — TRAVEL YOUR WAY
+   MINIMAL LUXURY STYLE
+   HTML UNCHANGED
+========================================================= */
+
+#experiences {
+  width: 100%;
+  padding: 100px 24px;
+  background: transparent !important;
+  border: none !important;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+}
+
+#experiences .looma-section-inner {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+#experiences .looma-kicker {
+  display: block;
+  margin-bottom: 15px;
+
+  color: var(--gold-dark) !important;
+
+  font-family: Manrope, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+#experiences .looma-section-title {
+  max-width: 720px;
+  margin: 0;
+
+  color: var(--navy) !important;
+
+  font-family: Manrope, sans-serif;
+  font-size: clamp(38px, 4.5vw, 58px);
+  font-weight: 600;
+
+  line-height: 1.05;
+  letter-spacing: -.05em;
+}
+
+#experiences .looma-section-title em {
+  color: var(--muted) !important;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* =========================================================
+   EXPERIENCE AREA
+========================================================= */
+
+#experiences .looma-experience-grid {
+  width: 100%;
+  margin-top: 75px;
+
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+
+  background: transparent !important;
+
+  border: none !important;
+}
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+#experiences .looma-experience {
+  position: relative;
+
+  min-height: 260px !important;
+
+  display: flex !important;
+  flex-direction: column !important;
+
+  padding: 0 28px !important;
+  margin: 0 !important;
+
+  background: transparent !important;
+
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+
+  overflow: visible !important;
+
+  transition: transform .35s ease;
+}
+
+/* vertical separators */
+
+#experiences .looma-experience + .looma-experience {
+  border-left: 1px solid var(--line) !important;
+}
+
+/* remove old special grid behaviour */
+
+#experiences .looma-experience:first-child,
+#experiences .looma-experience:nth-child(5) {
+  grid-column: auto !important;
+  min-height: 260px !important;
+}
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+#experiences .looma-experience strong {
+  display: block;
+
+  margin: 0 0 55px;
+
+  color: var(--gold-dark) !important;
+
+  font-family: Manrope, sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: .15em;
+}
+
+/* =========================================================
+   GOLD ACCENT
+========================================================= */
+
+#experiences .looma-experience::before {
+  content: "";
+
+  position: absolute;
+  top: -12px;
+  left: 28px;
+
+  width: 22px;
+  height: 1px;
+
+  background: var(--gold-dark);
+
+  transition: width .35s ease;
+}
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+#experiences .looma-experience h3 {
+  margin: 0 0 12px;
+
+  color: var(--navy) !important;
+
+  font-family: Manrope, sans-serif;
+  font-size: 19px;
+  font-weight: 700;
+
+  line-height: 1.3;
+  letter-spacing: -.025em;
+
+  transition: color .3s ease;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+#experiences .looma-experience p {
+  max-width: 190px;
+
+  margin: 0;
+
+  color: var(--muted) !important;
+
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+#experiences .looma-experience:hover {
+  transform: translateY(-6px);
+  background: transparent !important;
+}
+
+#experiences .looma-experience:hover::before {
+  width: 45px;
+}
+
+#experiences .looma-experience:hover h3 {
+  color: var(--gold-dark) !important;
+}
+/* =========================================================
+   TABLET — EDITORIAL 2 ROW STYLE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  #experiences {
+    padding: 70px 24px 45px !important;
+  }
+
+  #experiences .looma-section-title {
+    max-width: 600px;
+  }
+
+  #experiences .looma-experience-grid {
+    margin-top: 50px !important;
+
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+
+    gap: 0 !important;
+
+    border-top: 1px solid var(--line) !important;
+  }
+
+  #experiences .looma-experience {
+    min-height: 190px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+
+    padding: 24px 28px !important;
+
+    border: none !important;
+    border-bottom: 1px solid var(--line) !important;
+
+    background: transparent !important;
+  }
+
+  /* vertical divider only between columns */
+  #experiences .looma-experience:nth-child(even) {
+    border-left: 1px solid var(--line) !important;
+  }
+
+  #experiences .looma-experience:nth-child(5) {
+    grid-column: 1 / -1 !important;
+    min-height: 150px !important;
+
+    border-left: none !important;
+  }
+
+  #experiences .looma-experience strong {
+    margin: 0 0 30px !important;
+    font-size: 10px;
+  }
+
+  #experiences .looma-experience h3 {
+    margin: 0 0 9px !important;
+    font-size: 18px;
+  }
+
+  #experiences .looma-experience p {
+    max-width: 330px;
+    margin: 0 !important;
+
+    font-size: 11px;
+    line-height: 1.65;
+  }
+
+  #experiences .looma-experience::before {
+    top: 24px;
+    left: 28px;
+
+    width: 20px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE — MINIMAL NUMBERED LIST
+========================================================= */
+
+@media (max-width: 600px) {
+
+  #experiences {
+    padding: 55px 18px 30px !important;
+  }
+
+  #experiences .looma-kicker {
+    margin-bottom: 12px;
+    font-size: 9px;
+  }
+
+  #experiences .looma-section-title {
+    font-size: 30px;
+    line-height: 1.08;
+  }
+
+  #experiences .looma-experience-grid {
+    display: block !important;
+
+    margin-top: 38px !important;
+
+    border-top: 1px solid var(--line) !important;
+  }
+
+  /* EACH SERVICE */
+  #experiences .looma-experience,
+  #experiences .looma-experience:first-child,
+  #experiences .looma-experience:nth-child(5) {
+
+    width: 100% !important;
+
+    min-height: auto !important;
+
+    display: grid !important;
+    grid-template-columns: 38px 1fr !important;
+
+    padding: 20px 0 !important;
+
+    margin: 0 !important;
+
+    border: none !important;
+    border-bottom: 1px solid var(--line) !important;
+
+    background: transparent !important;
+
+    transform: none !important;
+  }
+
+  /* NUMBER */
+  #experiences .looma-experience strong {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+
+    margin: 1px 0 0 !important;
+
+    font-size: 9px;
+    letter-spacing: .1em;
+  }
+
+  /* CONTENT */
+  #experiences .looma-experience h3 {
+    grid-column: 2;
+
+    margin: 0 0 6px !important;
+
+    font-size: 16px;
+    line-height: 1.3;
+  }
+
+  #experiences .looma-experience p {
+    grid-column: 2;
+
+    max-width: 100%;
+
+    margin: 0 !important;
+
+    font-size: 10.5px;
+    line-height: 1.55;
+  }
+
+  /* SMALL GOLD MARK */
+  #experiences .looma-experience::before {
+    display: none !important;
+  }
+
+  /* NO TOUCH HOVER EFFECT */
+  #experiences .looma-experience:hover {
+    background: transparent !important;
+    padding-left: 0 !important;
+    transform: none !important;
+  }
+
+  #experiences .looma-experience:hover h3 {
+    color: var(--navy) !important;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  #experiences {
+    padding: 48px 15px 25px !important;
+  }
+
+  #experiences .looma-section-title {
+    font-size: 27px;
+  }
+
+  #experiences .looma-experience-grid {
+    margin-top: 32px !important;
+  }
+
+  #experiences .looma-experience,
+  #experiences .looma-experience:first-child,
+  #experiences .looma-experience:nth-child(5) {
+    grid-template-columns: 32px 1fr !important;
+
+    padding: 18px 0 !important;
+  }
+
+  #experiences .looma-experience h3 {
+    font-size: 15px;
+  }
+
+  #experiences .looma-experience p {
+    font-size: 10px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* =========================================
+   LOOMA ABOUT — BALANCED EDITORIAL
+========================================= */
+
+#about.looma-section {
+  padding: clamp(65px, 8vw, 105px) 4.5%;
+  background: var(--surface);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+#about .looma-section-inner {
+  width: 100%;
+  max-width: 1500px;
+  margin-inline: auto;
+}
+
+#about .looma-about-grid {
+  display: block;
+}
+
+/* MAIN GRID */
+
+#about .looma-about-grid > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.85fr);
+  grid-template-rows: auto auto auto auto;
+  column-gap: clamp(45px, 7vw, 110px);
+  row-gap: 0;
+  align-items: start;
+  width: 100%;
+  min-width: 0;
+}
+
+/* EYEBROW */
+
+#about .looma-kicker {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 24px;
+  font-size: 11px;
+  line-height: 1.4;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  color: var(--text-muted, #777);
+}
+
+#about .looma-kicker::before {
+  content: "";
+  flex: 0 0 28px;
+  height: 1px;
+  background: currentColor;
+}
+
+/* HEADING — LEFT */
+
+#about .looma-section-title {
+  grid-column: 1;
+  grid-row: 2 / span 3;
+  align-self: start;
+  max-width: 650px;
+  margin: 0;
+  font-size: clamp(44px, 5.1vw, 74px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+#about .looma-section-title em {
+  display: inline;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.035em;
+  color: var(--accent, #64869a);
+}
+
+/* DESCRIPTION — RIGHT */
+
+#about .looma-about-grid .looma-section-copy {
+  grid-column: 2;
+  margin: 0;
+  max-width: 540px;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.9;
+  font-weight: 400;
+  color: var(--text-muted, #737373);
+}
+
+#about .looma-about-grid .looma-section-copy:nth-of-type(1) {
+  grid-row: 1 / span 2;
+  align-self: end;
+  padding-top: 5px;
+}
+
+#about .looma-about-grid .looma-section-copy:nth-of-type(2) {
+  grid-row: 3;
+  align-self: start;
+  margin-top: 24px;
+  padding-top: 19px;
+  border-top: 1px solid var(--line);
+}
+
+/* BUTTON */
+
+#about .looma-actions {
+  grid-column: 2;
+  grid-row: 4;
+  justify-self: start;
+  margin-top: 30px;
+}
+
+#about .looma-btn-dark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  min-height: 49px;
+  padding: 0 22px;
+  border: 1px solid var(--text);
+  border-radius: 3px;
+  background: var(--text);
+  color: var(--surface);
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.25s ease,
+              color 0.25s ease,
+              transform 0.25s ease;
+}
+
+#about .looma-btn-dark span {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+#about .looma-btn-dark:hover {
+  background: transparent;
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+#about .looma-btn-dark:hover span {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  #about.looma-section {
+    padding: 70px 5%;
+  }
+
+  #about .looma-about-grid > div {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+    column-gap: 36px;
+  }
+
+  #about .looma-section-title {
+    font-size: clamp(38px, 5.4vw, 52px);
+    letter-spacing: -0.04em;
+  }
+
+  #about .looma-about-grid .looma-section-copy {
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  #about .looma-about-grid .looma-section-copy:nth-of-type(2) {
+    margin-top: 18px;
+    padding-top: 15px;
+  }
+
+  #about .looma-actions {
+    margin-top: 24px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+  #about.looma-section {
+    padding: 58px 22px 62px;
+  }
+
+  #about .looma-about-grid > div {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #about .looma-kicker {
+    margin-bottom: 21px;
+    font-size: 10px;
+    letter-spacing: 2.2px;
+  }
+
+  #about .looma-section-title {
+    max-width: 480px;
+    margin: 0 0 25px;
+    font-size: clamp(38px, 9.5vw, 48px);
+    line-height: 1.12;
+    letter-spacing: -0.04em;
+  }
+
+  #about .looma-about-grid .looma-section-copy {
+    max-width: none;
+    margin: 0 0 17px;
+    font-size: 14px;
+    line-height: 1.85;
+  }
+
+  #about .looma-about-grid .looma-section-copy:nth-of-type(2) {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+  }
+
+  #about .looma-actions {
+    margin-top: 25px;
+  }
+
+  #about .looma-btn-dark {
+    min-height: 47px;
+    padding: 0 19px;
+    gap: 20px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+  #about.looma-section {
+    padding-inline: 18px;
+  }
+
+  #about .looma-section-title {
+    font-size: 36px;
+  }
 }
