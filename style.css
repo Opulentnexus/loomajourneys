@@ -4486,3 +4486,30 @@ background:
     font-size: 36px;
   }
 }
+
+/* Fix mobile navigation click issue */
+#mobileMenu {
+  z-index: 99999 !important;
+  pointer-events: auto !important;
+}
+
+#mobileMenu nav {
+  position: relative;
+  z-index: 100000 !important;
+  pointer-events: auto !important;
+}
+
+#mobileMenu nav a {
+  position: relative;
+  display: block;
+  pointer-events: auto !important;
+  cursor: pointer;
+  touch-action: manipulation;
+  z-index: 100001 !important;
+}
+
+/* Prevent decorative overlays from blocking clicks */
+#mobileMenu::before,
+#mobileMenu::after {
+  pointer-events: none !important;
+}
